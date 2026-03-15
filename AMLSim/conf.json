@@ -1,8 +1,8 @@
 {
   "general": {
     "random_seed": 0,
-    "simulation_name": "sample",
-    "total_steps": 720,
+    "simulation_name": "run_50K_5M",
+    "total_steps": 730,
     "base_date": "2017-01-01"
   },
   "default": {
@@ -35,7 +35,7 @@
     }
   },
   "input": {
-    "directory": "paramFiles/1K",
+    "directory": "paramFiles/50K_5M",
     "schema": "schema.json",
     "accounts": "accounts.csv",
     "alert_patterns": "alertPatterns.csv",
@@ -75,8 +75,8 @@
   "simulator": {
     "compute_diameter": false,
     "transaction_limit": 0,
-    "transaction_interval": 7,
-    "sar_interval": 7,
+    "transaction_interval": 1,
+    "sar_interval": 1,
     "sar_balance_ratio": 1.0,
     "numBranches": 1000
   },
