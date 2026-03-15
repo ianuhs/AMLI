@@ -62,3 +62,6 @@ buildNumber.properties
 # another folder that is ignored by vscode
 .settings/
 
+AMLSim/outputs/run_50K_5M/transactions.csv
+AMLSim/outputs/run_50K_5M/tx_log.csv
+
