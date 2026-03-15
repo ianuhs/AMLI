@@ -15,11 +15,22 @@ EXCLUDE_COLS = {"acct_id", "community_id"}
 
 def build_labels(features_df: pd.DataFrame, dfs: dict) -> pd.Series:
     """
-    Create binary labels: 1 if account appears in alert_accounts, 0 otherwise.
+    Create binary labels: 1 if account appears in alert_accounts OR sar_accounts.
+    SAR accounts are higher-confidence suspicious activity reports.
     """
+    suspicious_ids = set()
+
     if "alert_accounts" in dfs and len(dfs["alert_accounts"]) > 0:
-        alert_accts = dfs["alert_accounts"]
-        suspicious_ids = set(alert_accts["acct_id"].unique())
+        suspicious_ids.update(dfs["alert_accounts"]["acct_id"].unique())
+        logger.info("alert_accounts: %d flagged IDs", len(suspicious_ids))
+
+    if "sar_accounts" in dfs and len(dfs["sar_accounts"]) > 0:
+        sar_ids = set(dfs["sar_accounts"]["acct_id"].unique())
+        new_sar = sar_ids - suspicious_ids
+        suspicious_ids.update(sar_ids)
+        logger.info("sar_accounts: %d additional IDs (total unique: %d)", len(new_sar), len(suspicious_ids))
+
+    if suspicious_ids:
         labels = features_df["acct_id"].isin(suspicious_ids).astype(int)
         logger.info(
             "Labels: %d suspicious / %d total (%.2f%%)",
@@ -27,7 +38,7 @@ def build_labels(features_df: pd.DataFrame, dfs: dict) -> pd.Series:
         )
         return labels
     else:
-        logger.warning("No alert_accounts data found. Using all-zero labels.")
+        logger.warning("No alert_accounts or sar_accounts found. Using all-zero labels.")
         return pd.Series(np.zeros(len(features_df)), dtype=int)
 
 
@@ -64,15 +75,25 @@ def train_model(features_df: pd.DataFrame, labels: pd.Series) -> tuple:
 
     logger.info("Training LightGBM on %d samples (%d features)...", len(X_train), X.shape[1])
 
+    # Precise class imbalance handling: weight negatives by ratio
+    n_pos = int(y_train.sum())
+    n_neg = len(y_train) - n_pos
+    spw = n_neg / n_pos if n_pos > 0 else 1.0
+    logger.info("scale_pos_weight=%.2f (neg=%d, pos=%d)", spw, n_neg, n_pos)
+
     model = lgb.LGBMClassifier(
         objective="binary",
         metric="auc",
-        is_unbalance=True,
+        scale_pos_weight=spw,
         learning_rate=0.05,
-        num_leaves=31,
-        max_depth=6,
-        min_child_samples=5,
-        n_estimators=300,
+        num_leaves=63,
+        max_depth=7,
+        min_child_samples=10,
+        n_estimators=500,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        reg_alpha=0.1,
+        reg_lambda=0.1,
         verbose=-1,
         random_state=42,
     )
@@ -80,6 +101,7 @@ def train_model(features_df: pd.DataFrame, labels: pd.Series) -> tuple:
     model.fit(
         X_train, y_train,
         eval_set=[(X_test, y_test)],
+        callbacks=[lgb.early_stopping(stopping_rounds=50, verbose=False)],
     )
 
     # Evaluate

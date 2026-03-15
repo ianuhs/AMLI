@@ -12,7 +12,6 @@ def compute_graph_features(dfs: dict, features_df: pd.DataFrame) -> pd.DataFrame
     Louvain community membership.
     """
     tx = dfs["transactions"]
-    acct_ids = features_df["acct_id"].unique()
 
     logger.info("Building transaction graph with igraph...")
 
@@ -23,7 +22,7 @@ def compute_graph_features(dfs: dict, features_df: pd.DataFrame) -> pd.DataFrame
         .reset_index()
     )
 
-    # Create igraph directed graph
+    # Build vertex index with vectorized operations
     vertices = list(set(edges_agg["orig_acct"].tolist() + edges_agg["bene_acct"].tolist()))
     vertex_map = {v: i for i, v in enumerate(vertices)}
 
@@ -31,16 +30,10 @@ def compute_graph_features(dfs: dict, features_df: pd.DataFrame) -> pd.DataFrame
     g.add_vertices(len(vertices))
     g.vs["name"] = vertices
 
-    edge_list = [
-        (vertex_map[row["orig_acct"]], vertex_map[row["bene_acct"]])
-        for _, row in edges_agg.iterrows()
-        if row["orig_acct"] in vertex_map and row["bene_acct"] in vertex_map
-    ]
-    weights = [
-        row["weight"]
-        for _, row in edges_agg.iterrows()
-        if row["orig_acct"] in vertex_map and row["bene_acct"] in vertex_map
-    ]
+    src_indices = edges_agg["orig_acct"].map(vertex_map).tolist()
+    tgt_indices = edges_agg["bene_acct"].map(vertex_map).tolist()
+    edge_list = list(zip(src_indices, tgt_indices))
+    weights = edges_agg["weight"].tolist()
 
     g.add_edges(edge_list)
     g.es["weight"] = weights

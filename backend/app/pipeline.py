@@ -59,13 +59,13 @@ def run_pipeline(run_id: int, run_dir: str):
         risk_scores = predict_risk_scores(model, features_df, feature_cols)
         features_df["risk_score"] = risk_scores
 
-        # Step 6: Compute SHAP values
+        # Step 6: Compute SHAP values for flagged accounts only
         logger.info("=== Step 6: Computing SHAP explanations ===")
-        shap_explanations = compute_shap_values(model, features_df, feature_cols)
+        flagged_mask = features_df["risk_score"] >= settings.risk_threshold
+        shap_explanations = compute_shap_values(model, features_df, feature_cols, flagged_mask=flagged_mask)
 
         # Step 7: Identify flagged accounts
         alert_type_map = get_alert_type_map(dfs)
-        flagged_mask = features_df["risk_score"] >= settings.risk_threshold
         flagged_count = int(flagged_mask.sum())
         total_accounts = len(features_df)
         logger.info("Flagged %d / %d accounts (threshold=%.2f)", flagged_count, total_accounts, settings.risk_threshold)

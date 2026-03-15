@@ -50,7 +50,29 @@ def compute_tabular_features(dfs: dict) -> pd.DataFrame:
         columns={"orig_acct": "acct_id", 0: "structuring_count"}
     )
 
-    # --- Temporal velocity (transactions per time window) ---
+    # --- Round-number transaction ratio (laundering signal) ---
+    tx_round = tx.copy()
+    tx_round["is_round"] = (tx_round["amount"] % 1 == 0).astype(int)
+    round_ratio = tx_round.groupby("orig_acct").agg(
+        round_amt_count=("is_round", "sum"),
+        round_amt_ratio=("is_round", "mean"),
+    ).reset_index().rename(columns={"orig_acct": "acct_id"})
+
+    # --- SAR transaction ratio (fraction of sender's txs marked is_sar=True) ---
+    sar_ratio = None
+    if "is_sar" in tx.columns:
+        try:
+            tx_sar = tx.copy()
+            tx_sar["is_sar_flag"] = tx_sar["is_sar"].astype(str).str.lower().isin(["true", "1", "yes"]).astype(int)
+            sar_ratio = tx_sar.groupby("orig_acct").agg(
+                sar_tx_count=("is_sar_flag", "sum"),
+                sar_tx_ratio=("is_sar_flag", "mean"),
+            ).reset_index().rename(columns={"orig_acct": "acct_id"})
+        except Exception as e:
+            logger.warning("Could not compute SAR ratio: %s", e)
+
+    # --- Temporal velocity & burst detection ---
+    velocity = None
     if "timestamp" in tx.columns:
         try:
             tx_ts = tx.copy()
@@ -61,14 +83,35 @@ def compute_tabular_features(dfs: dict) -> pd.DataFrame:
                 velocity = daily.groupby("orig_acct").agg(
                     max_daily_tx=("daily_count", "max"),
                     avg_daily_tx=("daily_count", "mean"),
+                    std_daily_tx=("daily_count", "std"),   # NEW: burst detection
                     active_days=("date", "nunique"),
                 ).reset_index().rename(columns={"orig_acct": "acct_id"})
-            else:
-                velocity = None
+                velocity["std_daily_tx"] = velocity["std_daily_tx"].fillna(0)
         except Exception:
             velocity = None
-    else:
-        velocity = None
+
+    # --- Reciprocal transaction flag (A→B and B→A on same day) ---
+    reciprocal = None
+    if "timestamp" in tx.columns:
+        try:
+            tx_r = tx.copy()
+            tx_r["timestamp"] = pd.to_datetime(tx_r["timestamp"], errors="coerce")
+            tx_r["date"] = tx_r["timestamp"].dt.date
+            # Normalize pair so min_id→max_id
+            tx_r["pair_key"] = tx_r.apply(
+                lambda r: f"{min(r['orig_acct'], r['bene_acct'])}_{max(r['orig_acct'], r['bene_acct'])}_{r['date']}",
+                axis=1
+            )
+            pair_counts = tx_r.groupby("pair_key")["orig_acct"].nunique()
+            reciprocal_pairs = set(pair_counts[pair_counts > 1].index)
+            tx_r["is_reciprocal"] = tx_r["pair_key"].isin(reciprocal_pairs).astype(int)
+            recip = tx_r.groupby("orig_acct").agg(
+                reciprocal_tx_count=("is_reciprocal", "sum"),
+                reciprocal_tx_ratio=("is_reciprocal", "mean"),
+            ).reset_index().rename(columns={"orig_acct": "acct_id"})
+            reciprocal = recip
+        except Exception as e:
+            logger.warning("Could not compute reciprocal features: %s", e)
 
     # --- Entity type from accounts ---
     entity_type = accounts[["acct_id"]].copy()
@@ -82,6 +125,7 @@ def compute_tabular_features(dfs: dict) -> pd.DataFrame:
     features = features.merge(sent, on="acct_id", how="left")
     features = features.merge(recv, on="acct_id", how="left")
     features = features.merge(structuring, on="acct_id", how="left")
+    features = features.merge(round_ratio, on="acct_id", how="left")
     features = features.merge(entity_type, on="acct_id", how="left")
 
     if type_pcts is not None:
@@ -89,6 +133,12 @@ def compute_tabular_features(dfs: dict) -> pd.DataFrame:
 
     if velocity is not None:
         features = features.merge(velocity, on="acct_id", how="left")
+
+    if sar_ratio is not None:
+        features = features.merge(sar_ratio, on="acct_id", how="left")
+
+    if reciprocal is not None:
+        features = features.merge(reciprocal, on="acct_id", how="left")
 
     # Fill NaN with 0 for numeric columns
     numeric_cols = features.select_dtypes(include=[np.number]).columns
@@ -106,6 +156,10 @@ def compute_tabular_features(dfs: dict) -> pd.DataFrame:
         features["unique_recipients"] / features["unique_senders"],
         0,
     )
+    # log-transforms to reduce outlier influence
+    features["log_total_sent"] = np.log1p(features["total_sent"])
+    features["log_total_received"] = np.log1p(features["total_received"])
+    features["log_tx_count_total"] = np.log1p(features["tx_count_total"])
 
     logger.info("Computed %d features for %d accounts", len(features.columns) - 1, len(features))
     return features

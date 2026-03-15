@@ -30,4 +30,4 @@ uploads/
 reports/
 
 # Data (large CSVs)
-data/run_50K_5M/*.csv
+data/training_sets/transactions-full.csv

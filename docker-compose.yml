@@ -25,6 +25,8 @@ services:
       DATABASE_URL: postgresql://${POSTGRES_USER:-aml}:${POSTGRES_PASSWORD:-amlpass}@postgres:5432/${POSTGRES_DB:-amldb}
     volumes:
       - ./backend/app:/app/app
+      - ./backend/scripts:/app/scripts
+      - ./backend/models:/app/models
       - ./data:/app/data
       - uploads:/app/uploads
       - reports:/app/reports

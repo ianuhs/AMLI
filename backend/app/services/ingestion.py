@@ -13,7 +13,6 @@ def load_csv_files(run_dir: str) -> dict:
     dfs = {}
 
     # Required files
-    # Support both transactions-full.csv and transactions.csv
     tx_path = os.path.join(run_dir, "transactions-full.csv")
     if not os.path.exists(tx_path):
         tx_path = os.path.join(run_dir, "transactions.csv")
@@ -31,9 +30,10 @@ def load_csv_files(run_dir: str) -> dict:
     optional = {
         "alert_accounts": "alert_accounts.csv",
         "alert_transactions": "alert_transactions.csv",
+        "sar_accounts": "sar_accounts.csv",
         "account_mapping": "accountMapping.csv",
-        "individuals": "individuals.csv",
-        "organizations": "organizations.csv",
+        "individuals": "individuals-bulkload.csv",
+        "organizations": "organizations-bulkload.csv",
     }
 
     for key, fname in optional.items():
@@ -52,27 +52,29 @@ def normalize_columns(dfs: dict) -> dict:
     Normalize column names across different data sources.
     AMLSim output varies slightly; standardize to lowercase with underscores.
     """
-    tx = dfs["transactions"]
+    for key, df in dfs.items():
+        # Lowercase all columns
+        df.columns = [str(c).lower().strip() for c in df.columns]
 
-    # Detect and normalize transaction column names
-    col_map = {}
-    for col in tx.columns:
-        lower = col.lower().strip()
-        if lower in ("tran_id", "id", "transaction_id"):
-            col_map[col] = "tran_id"
-        elif lower in ("orig_acct", "sender", "orig_id", "nameOrig"):
-            col_map[col] = "orig_acct"
-        elif lower in ("bene_acct", "receiver", "bene_id", "nameDest"):
-            col_map[col] = "bene_acct"
-        elif lower in ("base_amt", "amount", "tx_amount"):
-            col_map[col] = "amount"
-        elif lower in ("tx_type", "type", "tran_type"):
-            col_map[col] = "tx_type"
-        elif lower in ("tran_timestamp", "timestamp", "step"):
-            col_map[col] = "timestamp"
+        # Specific renames to ensure consistent keys
+        col_map = {}
+        for col in df.columns:
+            if col in ("tran_id", "id", "transaction_id"):
+                col_map[col] = "tran_id"
+            elif col in ("orig_acct", "sender", "orig_id", "nameorig"):
+                col_map[col] = "orig_acct"
+            elif col in ("bene_acct", "receiver", "bene_id", "namedest"):
+                col_map[col] = "bene_acct"
+            elif col in ("base_amt", "amount", "tx_amount"):
+                col_map[col] = "amount"
+            elif col in ("tx_type", "type", "tran_type"):
+                col_map[col] = "tx_type"
+            elif col in ("tran_timestamp", "timestamp", "step"):
+                col_map[col] = "timestamp"
+            elif col == "account_id":
+                col_map[col] = "acct_id"
 
-    if col_map:
-        tx = tx.rename(columns=col_map)
+        if col_map:
+            dfs[key] = df.rename(columns=col_map)
 
-    dfs["transactions"] = tx
     return dfs
