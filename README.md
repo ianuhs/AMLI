@@ -1,7 +1,8 @@
 # AMLI — AI-Powered Anti-Money Laundering Intelligence
 
-Detect suspicious financial activity using machine learning, graph analytics, and generative AI. Upload transaction data and receive an interactive risk dashboard with explainable results and a compliance-ready PDF report.
+Project made for GenAI Genesis 2026 Hackathon. Detect suspicious financial activity using machine learning, graph analytics, and generative AI. Upload transaction data and receive an interactive risk dashboard with explainable results and a compliance-ready PDF report.
 
+![alt text](AMLI_Diagram.png)
 ---
 
 ## Table of Contents
