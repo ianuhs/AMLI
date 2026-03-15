@@ -1,4 +1,4 @@
-# AML Sentinel — AI-Powered Anti-Money Laundering Detection
+# AMLI — AI-Powered Anti-Money Laundering Detection
 
 Detect suspicious financial activity using machine learning, graph analytics, and generative AI. Upload transaction data and receive an interactive risk dashboard with explainable results and compliance-ready PDF reports.
 

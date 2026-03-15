@@ -13,7 +13,7 @@ class AMLReport(FPDF):
 
     def header(self):
         self.set_font("Helvetica", "B", 14)
-        self.cell(0, 10, "AML Risk Analysis Report", ln=True, align="C")
+        self.cell(0, 10, "AMLI Risk Analysis Report", ln=True, align="C")
         self.set_font("Helvetica", "", 9)
         self.cell(0, 6, f"Generated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}", ln=True, align="C")
         self.ln(5)

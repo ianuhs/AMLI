@@ -13,7 +13,10 @@ def load_csv_files(run_dir: str) -> dict:
     dfs = {}
 
     # Required files
-    tx_path = os.path.join(run_dir, "transactions.csv")
+    # Support both transactions-full.csv and transactions.csv
+    tx_path = os.path.join(run_dir, "transactions-full.csv")
+    if not os.path.exists(tx_path):
+        tx_path = os.path.join(run_dir, "transactions.csv")
     acct_path = os.path.join(run_dir, "accounts.csv")
 
     logger.info("Loading transactions from %s", tx_path)

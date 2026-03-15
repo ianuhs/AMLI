@@ -1,8 +1,8 @@
 {
   "general": {
-    "random_seed": 0,
-    "simulation_name": "run_50K_5M",
-    "total_steps": 730,
+    "random_seed": 1,
+    "simulation_name": "demoTest",
+    "total_steps": 365,
     "base_date": "2017-01-01"
   },
   "default": {
@@ -35,7 +35,7 @@
     }
   },
   "input": {
-    "directory": "paramFiles/50K_5M",
+    "directory": "paramFiles/demo",
     "schema": "schema.json",
     "accounts": "accounts.csv",
     "alert_patterns": "alertPatterns.csv",
