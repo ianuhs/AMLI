@@ -14,10 +14,7 @@ const EXPECTED_FILES: Record<string, string> = {
   transactions: "transactions.csv (required)",
   accounts: "accounts.csv (required)",
   alert_accounts: "alert_accounts.csv",
-  alert_transactions: "alert_transactions.csv",
-  account_mapping: "accountMapping.csv",
-  individuals: "individuals.csv",
-  organizations: "organizations.csv",
+  sar_accounts: "sar_accounts.csv",
 };
 
 const schemaContent = `Table,Column Name,Display Name,Required,Description
@@ -78,12 +75,9 @@ export default function UploadPage() {
 
   function classifyFile(file: File): string | null {
     const name = file.name.toLowerCase();
-    if (name.includes("transaction") && !name.includes("alert")) return "transactions";
+    if (name.includes("transaction")) return "transactions";
     if (name.includes("alert_account") || name.includes("alert-account")) return "alert_accounts";
-    if (name.includes("alert_transaction") || name.includes("alert-transaction")) return "alert_transactions";
-    if (name.includes("accountmapping") || name.includes("account_mapping")) return "account_mapping";
-    if (name.includes("individual")) return "individuals";
-    if (name.includes("organization")) return "organizations";
+    if (name.includes("sar_account") || name.includes("sar-account")) return "sar_accounts";
     if (name.includes("account")) return "accounts";
     return null;
   }

@@ -80,7 +80,6 @@ export default function DashboardPage() {
       <div className="dashboard-header">
         <h1>Risk Analysis Results</h1>
         <p>
-          Run #{data.id} — {data.filename} —{" "}
           {data.completed_at && new Date(data.completed_at).toLocaleString()}
         </p>
       </div>
@@ -111,9 +110,8 @@ export default function DashboardPage() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
-            style={{ marginTop: 4 }}
-          >
-            📄 Download PDF
+            style={{ marginTop: 4 }}>
+            Download PDF
           </a>
         </div>
       </div>

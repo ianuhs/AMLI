@@ -65,6 +65,8 @@ export default function ShapWaterfall({ features }: Props) {
             color: "#f1f5f9",
             fontSize: 13,
           }}
+          labelStyle={{ color: "#94a3b8" }}
+          itemStyle={{ color: "#f1f5f9" }}
         />
         <ReferenceLine x={0} stroke="#334155" />
         <Bar dataKey="contribution" radius={[0, 4, 4, 0]}>

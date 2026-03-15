@@ -29,11 +29,7 @@ def load_csv_files(run_dir: str) -> dict:
     # Optional files
     optional = {
         "alert_accounts": "alert_accounts.csv",
-        "alert_transactions": "alert_transactions.csv",
         "sar_accounts": "sar_accounts.csv",
-        "account_mapping": "accountMapping.csv",
-        "individuals": "individuals-bulkload.csv",
-        "organizations": "organizations-bulkload.csv",
     }
 
     for key, fname in optional.items():

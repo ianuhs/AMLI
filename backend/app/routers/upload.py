@@ -18,10 +18,7 @@ async def upload_files(
     transactions: UploadFile = File(...),
     accounts: UploadFile = File(...),
     alert_accounts: UploadFile = File(None),
-    alert_transactions: UploadFile = File(None),
-    account_mapping: UploadFile = File(None),
-    individuals: UploadFile = File(None),
-    organizations: UploadFile = File(None),
+    sar_accounts: UploadFile = File(None),
     db: Session = Depends(get_db),
 ):
     """Upload CSV files and start the AML detection pipeline."""
@@ -42,14 +39,8 @@ async def upload_files(
     # Optional files
     if alert_accounts:
         file_map["alert_accounts.csv"] = alert_accounts
-    if alert_transactions:
-        file_map["alert_transactions.csv"] = alert_transactions
-    if account_mapping:
-        file_map["accountMapping.csv"] = account_mapping
-    if individuals:
-        file_map["individuals.csv"] = individuals
-    if organizations:
-        file_map["organizations.csv"] = organizations
+    if sar_accounts:
+        file_map["sar_accounts.csv"] = sar_accounts
 
     for fname, upload in file_map.items():
         path = os.path.join(run_dir, fname)

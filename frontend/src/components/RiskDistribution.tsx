@@ -49,6 +49,7 @@ export default function RiskDistribution({ data }: Props) {
             fontSize: 13,
           }}
           labelStyle={{ color: "#94a3b8" }}
+          itemStyle={{ color: "#f1f5f9" }}
           cursor={{ fill: "rgba(99, 102, 241, 0.08)" }}
         />
         <Bar dataKey="count" radius={[4, 4, 0, 0]}>
