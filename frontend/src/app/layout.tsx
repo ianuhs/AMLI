@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AML Sentinel — AI-Powered Anti-Money Laundering Detection",
+  title: "AMLI — AI-Powered Anti-Money Laundering Detection",
   description:
     "Detect suspicious financial activity with LightGBM, SHAP explainability, and IBM watsonx.ai. Upload transaction data and get actionable risk analysis in seconds.",
 };
@@ -18,7 +18,7 @@ export default function RootLayout({
         <div className="app-container">
           <nav className="navbar">
             <a href="/" className="navbar-brand">
-              <span className="navbar-logo">AML Sentinel</span>
+              <span className="navbar-logo">AMLI</span>
               <span className="navbar-badge">AI</span>
             </a>
           </nav>
