@@ -333,3 +333,23 @@ Three synthetic datasets are included in `data/test_sets/`, generated with AMLSi
 | `set3` | ~250 | ~20,000 |
 
 These datasets include fan_in, fan_out, and cycle laundering patterns and are suitable for end-to-end testing including Precision @ top 3% validation.
+
+---
+
+## AMLSim
+
+The `AMLSim/` directory contains the simulation configuration and scripts used to generate the training datasets. [AMLSim](https://github.com/IBM/AMLSim) is a multi-agent simulator developed by IBM Research that produces synthetic transaction networks with realistic money-laundering patterns (fan-in, fan-out, cycle, scatter-gather, etc.) and corresponding ground-truth alert labels.
+
+If you use the AMLSim-generated data in your work, please cite:
+
+```bibtex
+@misc{AMLSim,
+  author       = {Toyotaro Suzumura and Hiroki Kanezashi},
+  title        = {{Anti-Money Laundering Datasets}: {InPlusLab} Anti-Money Laundering Datasets},
+  howpublished = {\url{http://github.com/IBM/AMLSim/}},
+  year         = {2021}
+}
+```
+
+> Suzumura, T. & Kanezashi, H. — *Scalable Graph Learning for Anti-Money Laundering: A First Look*. arXiv:1812.00076  
+> Pareja, A. et al. — *EvolveGCN: Evolving Graph Convolutional Networks for Dynamic Graphs*. arXiv:1902.10191
