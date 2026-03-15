@@ -1,3 +1,4 @@
+import os
 import logging
 import datetime
 from sqlalchemy.orm import Session
@@ -7,7 +8,7 @@ from app.models import Run, Customer, Report
 from app.services.ingestion import load_csv_files, normalize_columns
 from app.services.features import compute_tabular_features
 from app.services.graph import compute_graph_features
-from app.services.model import build_labels, train_model, predict_risk_scores, get_alert_type_map
+from app.services.model import load_pretrained_model, predict_risk_scores, get_alert_type_map
 from app.services.explainer import compute_shap_values
 from app.services.llm import generate_llm_summary
 from app.services.pdf import generate_pdf_report
@@ -16,14 +17,17 @@ from app.config import settings
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
+# Path to pre-trained model files
+MODEL_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models")
+
 
 def run_pipeline(run_id: int, run_dir: str):
     """
-    Execute the full AML detection pipeline:
+    Execute the AML detection pipeline using a PRE-TRAINED model:
     1. Ingest CSV data
-    2. Compute tabular features
-    3. Compute graph features (igraph)
-    4. Train LightGBM and predict risk scores
+    2. Compute features (tabular + graph)
+    3. Load pre-trained LightGBM model
+    4. Predict risk scores
     5. Compute SHAP explanations
     6. Generate LLM summaries (IBM watsonx)
     7. Generate PDF report
@@ -46,12 +50,11 @@ def run_pipeline(run_id: int, run_dir: str):
         logger.info("=== Step 3: Computing graph features ===")
         features_df = compute_graph_features(dfs, features_df)
 
-        # Step 4: Build labels and train model
-        logger.info("=== Step 4: Training LightGBM ===")
-        labels = build_labels(features_df, dfs)
-        model, feature_cols, auc, X_all, y_all = train_model(features_df, labels)
+        # Step 4: Load pre-trained model
+        logger.info("=== Step 4: Loading pre-trained model ===")
+        model, feature_cols, auc = load_pretrained_model(MODEL_DIR)
 
-        # Step 5: Predict risk scores for all accounts
+        # Step 5: Predict risk scores
         logger.info("=== Step 5: Predicting risk scores ===")
         risk_scores = predict_risk_scores(model, features_df, feature_cols)
         features_df["risk_score"] = risk_scores
@@ -75,7 +78,7 @@ def run_pipeline(run_id: int, run_dir: str):
         if "type" in accounts_df.columns:
             account_types = dict(zip(accounts_df["acct_id"], accounts_df["type"].map({"I": "Individual", "O": "Organization"})))
 
-        # Save ALL customers to DB
+        # Save customers to DB
         logger.info("=== Saving results to database ===")
         customer_records = []
         flagged_data_for_pdf = []

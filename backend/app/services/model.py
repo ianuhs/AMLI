@@ -1,4 +1,6 @@
+import os
 import logging
+import pickle
 import numpy as np
 import pandas as pd
 import lightgbm as lgb
@@ -89,9 +91,44 @@ def train_model(features_df: pd.DataFrame, labels: pd.Series) -> tuple:
     return model, feature_cols, auc, X, y
 
 
+def load_pretrained_model(model_dir: str) -> tuple:
+    """
+    Load a pre-trained model and its metadata from disk.
+    Returns (model, feature_cols, auc) or raises FileNotFoundError.
+    """
+    model_path = os.path.join(model_dir, "lgbm_model.pkl")
+    meta_path = os.path.join(model_dir, "model_meta.pkl")
+
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(
+            f"No pre-trained model found at {model_path}. "
+            f"Run 'python -m scripts.train --data-dir <path>' first."
+        )
+
+    with open(model_path, "rb") as f:
+        model = pickle.load(f)
+    logger.info("Loaded pre-trained model from %s", model_path)
+
+    with open(meta_path, "rb") as f:
+        meta = pickle.load(f)
+    logger.info(
+        "Model meta: %d features, AUC=%.4f, trained on %d samples (%d positive)",
+        meta["n_features"], meta["auc"], meta["n_train_samples"], meta["n_positive"],
+    )
+
+    return model, meta["feature_cols"], meta["auc"]
+
+
 def predict_risk_scores(model, features_df: pd.DataFrame, feature_cols: list) -> np.ndarray:
     """Predict risk scores for all accounts."""
     X = features_df[feature_cols].copy()
+
+    # Add any missing columns (features the model expects but aren't in this data)
+    for col in feature_cols:
+        if col not in X.columns:
+            X[col] = 0
+    X = X[feature_cols]  # ensure correct column order
+
     for col in X.columns:
         X[col] = pd.to_numeric(X[col], errors="coerce").fillna(0)
 
