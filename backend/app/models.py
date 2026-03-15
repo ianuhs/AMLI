@@ -33,6 +33,7 @@ class Customer(Base):
     risk_score = Column(Float, nullable=False)
     is_flagged = Column(Boolean, default=False)
     alert_type = Column(String, nullable=True)  # fan_in, fan_out, cycle, or null
+    ground_truth_flagged = Column(Boolean, nullable=True)  # True if in alert_accounts (validation only)
     shap_values = Column(JSON, nullable=True)  # {feature_name: shap_value}
     top_features = Column(JSON, nullable=True)  # [{name, value, contribution}]
     llm_summary = Column(Text, nullable=True)

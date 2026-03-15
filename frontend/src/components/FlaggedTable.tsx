@@ -6,13 +6,22 @@ import { CustomerData } from "@/lib/api";
 interface Props {
   customers: CustomerData[];
   onSelect: (customer: CustomerData) => void;
+  showValidation?: boolean;
 }
 
 type SortKey = "risk_score" | "acct_id" | "total_sent" | "total_received" | "tx_count";
 
-export default function FlaggedTable({ customers, onSelect }: Props) {
+export function hasGroundTruth(customers: CustomerData[]): boolean {
+  return customers.some(
+    (c) => c.ground_truth_flagged === true || c.ground_truth_flagged === false
+  );
+}
+
+export default function FlaggedTable({ customers, onSelect, showValidation = false }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>("risk_score");
   const [sortAsc, setSortAsc] = useState(false);
+
+  const groundTruth = hasGroundTruth(customers);
 
   function handleSort(key: SortKey) {
     if (sortKey === key) setSortAsc(!sortAsc);
@@ -45,8 +54,20 @@ export default function FlaggedTable({ customers, onSelect }: Props) {
             <th className={sortKey === "risk_score" ? "sorted" : ""} onClick={() => handleSort("risk_score")}>
               Risk Score{sortIndicator("risk_score")}
             </th>
-            <th>Alert Type</th>
+            <th>
+              Alert Type{" "}
+              <span className="info-icon-wrap">
+                <span className="info-icon">i</span>
+                <span className="info-tooltip">
+                  <strong>fan_in</strong> — Unusually many counterparties sending funds into this account (funneling).<br />
+                  <strong>fan_out</strong> — Unusually many counterparties receiving funds from this account (layering).<br />
+                  <strong>cycle</strong> — Money flows in closed loops between a small group of accounts (circular layering).<br />
+                  <strong>other</strong> — Network pattern that did not match the above but still triggered an alert.
+                </span>
+              </span>
+            </th>
             <th>Entity</th>
+            {showValidation && groundTruth && <th>Validation</th>}
             <th className={sortKey === "total_sent" ? "sorted" : ""} onClick={() => handleSort("total_sent")}>
               Total Sent{sortIndicator("total_sent")}
             </th>
@@ -75,6 +96,17 @@ export default function FlaggedTable({ customers, onSelect }: Props) {
                 )}
               </td>
               <td>{c.entity_type || "—"}</td>
+              {showValidation && groundTruth && (
+                <td>
+                  {c.ground_truth_flagged === true ? (
+                    <span style={{ color: "var(--accent-green, #22c55e)", fontWeight: 500 }}>True positive</span>
+                  ) : c.ground_truth_flagged === false ? (
+                    <span style={{ color: "var(--accent-rose, #f43f5e)", fontWeight: 500 }}>False positive</span>
+                  ) : (
+                    <span style={{ color: "var(--text-muted)" }}>—</span>
+                  )}
+                </td>
+              )}
               <td>${c.total_sent?.toLocaleString(undefined, { maximumFractionDigits: 0 }) || "0"}</td>
               <td>${c.total_received?.toLocaleString(undefined, { maximumFractionDigits: 0 }) || "0"}</td>
               <td>{c.tx_count?.toLocaleString() || "0"}</td>

@@ -11,6 +11,7 @@ import {
   ReferenceLine,
 } from "recharts";
 import { FeatureContribution } from "@/lib/api";
+import { getRiskFactorInfo } from "@/lib/riskFactors";
 
 interface Props {
   features: FeatureContribution[];
@@ -23,25 +24,18 @@ export default function ShapWaterfall({ features }: Props) {
     .reverse();
 
   const chartData = top.map((f) => ({
-    name: formatName(f.name),
+    name: getRiskFactorInfo(f.name).label,
     contribution: Number(f.contribution.toFixed(4)),
     fullName: f.name,
     value: f.value,
   }));
-
-  function formatName(name: string): string {
-    return name
-      .replace(/_/g, " ")
-      .replace(/\b\w/g, (c) => c.toUpperCase())
-      .slice(0, 20);
-  }
 
   return (
     <ResponsiveContainer width="100%" height={280}>
       <BarChart
         data={chartData}
         layout="vertical"
-        margin={{ top: 4, right: 16, bottom: 4, left: 100 }}
+        margin={{ top: 4, right: 16, bottom: 4, left: 8 }}
       >
         <XAxis
           type="number"
@@ -55,7 +49,7 @@ export default function ShapWaterfall({ features }: Props) {
           tick={{ fill: "#94a3b8", fontSize: 12 }}
           axisLine={false}
           tickLine={false}
-          width={100}
+          width={160}
         />
         <Tooltip
           contentStyle={{

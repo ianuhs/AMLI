@@ -1,0 +1,507 @@
+acct_id,dsply_nm,type,acct_stat,acct_rptng_crncy,prior_sar_count,branch_id,open_dt,close_dt,initial_deposit,tx_behavior_id,bank_id,first_name,last_name,street_addr,city,state,country,zip,gender,birth_date,ssn,lon,lat
+0,C_0,I,A,USD,true,1,0,1000000,74594.27,,bank,Steven,Collins,48764 Howard Forge Apt. 421,Vanessaside,VT,US,79393,Male,1994-11-11,871-88-5410,73.479690,60.2738415
+1,C_1,I,A,USD,true,1,0,1000000,59341.25,,bank,Ronald,Cook,9387 Grimes Green Apt. 801,Pagetown,RI,US,65195,Male,1994-11-30,721-09-3131,124.680009,-30.4868135
+2,C_2,I,A,USD,true,1,0,1000000,60674.89,,bank,Robin,Fernandez,711 Golden Overpass,West Andreaville,OH,US,44115,Female,2022-01-02,618-71-9628,-25.565183,29.450832
+3,C_3,I,A,USD,true,1,0,1000000,64185.48,,bank,Steven,Leblanc,9342 Lori Bypass Suite 711,East Sandra,MP,US,11019,Male,1972-11-28,401-91-8595,-32.020057,50.066962
+4,C_4,I,A,USD,false,1,0,1000000,54225.58,,bank,Lorraine,Bruce,969 Hayes Shore,Christopherville,NM,US,77450,Female,1938-05-24,750-35-1920,-61.641150,9.8741475
+5,C_5,I,A,USD,true,1,0,1000000,90946.51,,bank,Alex,Woodward,0123 Lisa Roads Apt. 013,South Christopherville,AZ,US,79865,Male,1931-08-29,127-62-3451,-147.205300,-83.884349
+6,C_6,I,A,USD,true,1,0,1000000,78267.31,,bank,Curtis,Howard,1314 Graham Circle,Williamsville,UT,US,51786,Male,1995-01-25,859-73-2776,-70.792574,-74.4170695
+7,C_7,I,A,USD,true,1,0,1000000,82664.04,,bank,Sylvia,Banks,58419 Wade Bridge,Maldonadoshire,VI,US,67164,Female,1955-04-14,674-33-2514,120.969950,-86.6616515
+8,C_8,I,A,USD,true,1,0,1000000,64600.75,,bank,Sarah,Anderson,0842 Kathleen Orchard,Chelseastad,OR,US,83567,Female,1946-03-12,767-54-1323,-179.181691,69.6055285
+9,C_9,I,A,USD,false,1,0,1000000,88760.83,,bank,Susan,Munoz,33769 Johnson Well Suite 027,West Jacquelinemouth,NC,US,64367,Female,1910-03-17,040-64-5341,-12.465005,35.330430
+10,C_10,I,A,USD,false,1,0,1000000,98050.33,,bank,Diana,Good,81206 Stewart Forest Apt. 089,East Davidborough,VI,US,40139,Female,1921-10-27,875-51-1333,-168.271786,-16.257066
+11,C_11,I,A,USD,false,1,0,1000000,99980.23,,bank,Brenda,Nelson,559 Meghan Squares Suite 765,East Nicholas,LA,US,01667,Female,1949-05-09,377-92-1536,1.599791,76.574431
+12,C_12,I,A,USD,true,1,0,1000000,52123.96,,bank,Ashley,Hoffman,29456 Kelly Neck Apt. 042,West Richardmouth,ME,US,54859,Female,1966-01-06,346-44-2037,77.207619,-58.859323
+13,C_13,I,A,USD,true,1,0,1000000,65524.34,,bank,Kristie,Roberts,45229 Drake Route Apt. 113,North Paul,CT,US,52118,Female,2016-12-08,808-75-3560,47.116838,-67.5418185
+14,C_14,I,A,USD,true,1,0,1000000,54476.64,,bank,Yolanda,Salinas,263 Wilson View Apt. 873,South Raymondborough,SD,US,06019,Female,1982-07-08,108-26-7511,22.954365,7.077560
+15,C_15,I,A,USD,false,1,0,1000000,73740.26,,bank,Shelly,Daniels,97296 Rich Park,Marthafort,SC,US,88328,Female,2018-03-26,010-44-5215,-7.221577,-80.4790615
+16,C_16,I,A,USD,false,1,0,1000000,82875.64,,bank,Peter,West,269 Robbins Valley Suite 118,North Jeffreyton,ME,US,02504,Male,2010-03-07,820-20-7549,19.351908,45.559823
+17,C_17,I,A,USD,false,1,0,1000000,80412.46,,bank,Roger,Olson,189 Julie Throughway,West Amanda,PA,US,55268,Male,2001-12-17,398-78-9608,-54.602474,-84.501964
+18,C_18,I,A,USD,true,1,0,1000000,67724.77,,bank,Janet,Reyes,248 Cook Park,Sherriport,WI,US,53987,Female,1929-03-14,131-31-4704,-0.671881,-75.094574
+19,C_19,I,A,USD,false,1,0,1000000,98179.53,,bank,Luis,Soto,6097 Ellis Courts,Osbornetown,AZ,US,78921,Male,1922-06-01,563-84-5680,-75.324336,12.9219315
+20,C_20,I,A,USD,false,1,0,1000000,81188.10,,bank,Jeremy,Sherman,09795 Tara Station Suite 264,New Michelleborough,AZ,US,51884,Male,1963-01-13,809-81-1235,-156.033598,-79.2677695
+21,C_21,I,A,USD,false,1,0,1000000,99832.60,,bank,Stephanie,Henderson,993 Clayton Viaduct,Hunterville,FL,US,56333,Female,1919-12-13,108-54-1031,-126.736506,21.444052
+22,C_22,I,A,USD,false,1,0,1000000,71277.94,,bank,Gregory,Thompson,6607 Sharp Common,Chadstad,UT,US,04351,Male,2006-07-06,237-47-1156,140.291297,-51.5355765
+23,C_23,I,A,USD,true,1,0,1000000,82239.68,,bank,John,Zimmerman,104 Norris Rapids,Port Donald,NH,US,15232,Male,1940-02-26,029-27-5935,-0.141177,37.069399
+24,C_24,I,A,USD,true,1,0,1000000,54960.12,,bank,Clinton,Watson,89426 Sonya Unions,West William,IA,US,99441,Male,1987-02-17,882-17-9851,-168.967506,15.7101975
+25,C_25,I,A,USD,false,1,0,1000000,76790.32,,bank,Anthony,Ortiz,64862 Evans Knoll,East Seanstad,SC,US,69865,Male,1958-08-07,746-42-7231,-70.483556,9.749696
+26,C_26,I,A,USD,false,1,0,1000000,82321.49,,bank,Charles,Ford,21418 Laura Mission Suite 266,East Susan,MA,US,69097,Male,1984-02-16,495-97-3337,-21.768934,-89.505231
+27,C_27,I,A,USD,false,1,0,1000000,61645.31,,bank,Jonathan,Woodward,703 Wilson Roads Suite 892,Mccarthyfort,CO,US,89391,Male,1973-04-10,416-36-0355,-115.129021,-17.5013805
+28,C_28,I,A,USD,false,1,0,1000000,81212.48,,bank,Andrew,Sparks,46896 Garcia Glen,Justinborough,PA,US,11676,Male,1945-08-26,349-16-8687,-46.293888,-46.096104
+29,C_29,I,A,USD,false,1,0,1000000,56612.91,,bank,Michael,James,8298 Amanda Loop Suite 447,Ashleyberg,GA,US,16661,Male,1978-10-06,143-72-4899,10.083365,79.6811315
+30,C_30,I,A,USD,false,1,0,1000000,73073.94,,bank,William,Mcdaniel,77857 Scott Divide Suite 093,West Thomastown,PR,US,69553,Male,1919-08-22,760-86-6474,-176.551436,6.979910
+31,C_31,I,A,USD,false,1,0,1000000,80353.59,,bank,Jennifer,Prince,4329 Lee Mews,Moranfurt,GA,US,43845,Female,1960-09-09,459-91-2417,101.407260,-5.155150
+32,C_32,I,A,USD,false,1,0,1000000,73990.47,,bank,Anthony,Price,5667 Blair Underpass,South Shelby,OR,US,93561,Male,1937-05-07,087-24-5958,-149.403469,81.2815855
+33,C_33,I,A,USD,false,1,0,1000000,57570.09,,bank,Troy,Spears,491 Wise Knoll,Ellishaven,TN,US,85502,Male,2018-07-21,595-59-8032,-43.230948,37.6819875
+34,C_34,I,A,USD,false,1,0,1000000,59509.52,,bank,Gerald,Garcia,00250 Pena Dam Apt. 639,Grantbury,NH,US,25778,Male,2012-08-10,814-41-5291,107.709743,32.3379515
+35,C_35,I,A,USD,false,1,0,1000000,68748.38,,bank,Adam,Simpson,4486 Olson Well,North Kevin,OH,US,09982,Male,1961-01-12,829-53-8087,67.235323,28.140754
+36,C_36,I,A,USD,false,1,0,1000000,82602.21,,bank,Daniel,Pittman,12637 Lisa Points,Williamsburgh,IA,US,64728,Male,1942-07-25,361-41-7125,-122.401603,59.5330615
+37,C_37,I,A,USD,false,1,0,1000000,71649.22,,bank,Bryan,Brewer,19126 Jeffery Street,Lake Amandachester,PR,US,07024,Male,1923-12-01,755-73-5881,-56.754465,56.736886
+38,C_38,I,A,USD,false,1,0,1000000,60040.91,,bank,Breanna,Smith,318 Leonard Fort,Courtneyport,OR,US,22964,Female,1968-10-05,376-75-0415,-110.301885,16.1879275
+39,C_39,I,A,USD,true,1,0,1000000,66896.58,,bank,Olivia,Gomez,123 Hudson Square,East Jessica,GU,US,31131,Female,1978-10-05,645-64-1770,150.721485,-83.0167975
+40,C_40,I,A,USD,false,1,0,1000000,65426.82,,bank,Roberto,Floyd,7403 Donna Park Suite 851,Derrickfurt,VT,US,25544,Male,1954-10-03,061-27-0628,-10.801206,-22.996103
+41,C_41,I,A,USD,false,1,0,1000000,56881.42,,bank,Adam,Dougherty,345 Kevin Knolls Apt. 250,Burtontown,IA,US,06394,Male,1948-02-04,841-08-5652,176.469204,23.4550235
+42,C_42,I,A,USD,false,1,0,1000000,79451.64,,bank,Joseph,Ballard,6254 Debra Stream,Reyeschester,MH,US,35070,Male,2023-12-15,722-60-0688,123.186285,-57.091031
+43,C_43,I,A,USD,false,1,0,1000000,73550.02,,bank,Brian,Fuller,08298 Christopher Freeway Apt. 302,Lake Christian,VI,US,78866,Male,1992-07-28,630-78-0657,-44.454654,1.335247
+44,C_44,I,A,USD,false,1,0,1000000,66276.43,,bank,Joseph,Roberts,07154 Stephen Parkways Suite 265,Lindafurt,AL,US,41233,Male,1964-08-05,036-99-8713,126.284477,58.2019905
+45,C_45,I,A,USD,false,1,0,1000000,50079.70,,bank,Zachary,Gill,6165 Williams Groves,West Erinshire,UT,US,38482,Male,1998-08-30,529-44-6326,-45.442017,-33.905114
+46,C_46,I,A,USD,false,1,0,1000000,95695.53,,bank,Erica,Patton,98522 Mathis Viaduct Apt. 909,West Michael,SC,US,38960,Female,1979-11-19,175-01-2307,125.266283,-78.295844
+47,C_47,I,A,USD,false,1,0,1000000,52267.47,,bank,Rebecca,Jacobs,74931 Ramirez Village Apt. 821,New Daniel,NY,US,83355,Female,1997-10-02,273-40-4669,-172.679702,25.0792575
+48,C_48,I,A,USD,false,1,0,1000000,55756.19,,bank,James,Marshall,8885 Lee Tunnel Suite 208,Port Donna,WY,US,74331,Male,1914-06-02,422-82-3741,-171.575400,7.233342
+49,C_49,I,A,USD,false,1,0,1000000,64687.80,,bank,Angela,West,357 Jessica Gateway,West Jacob,WV,US,55548,Female,1996-07-05,461-66-1646,-78.918258,-45.846127
+50,C_50,I,A,USD,false,1,0,1000000,89465.71,,bank,Dale,Sanders,6446 Lynch Course,Anthonytown,WV,US,33342,Male,1960-09-24,651-81-6378,-159.374903,66.414446
+51,C_51,I,A,USD,false,1,0,1000000,96826.18,,bank,Heather,Jones,450 Wells Pike,North Christopher,VI,US,46039,Female,1993-05-28,688-70-7719,-156.850040,-5.5683955
+52,C_52,I,A,USD,false,1,0,1000000,87956.70,,bank,Robert,Miller,22708 Madison Spurs,Herringstad,AS,US,77293,Male,1930-06-08,272-26-4276,-3.939541,-21.8490785
+53,C_53,I,A,USD,false,1,0,1000000,60315.81,,bank,Felicia,Rios,78209 Darlene Bypass Suite 137,Port Stephen,GA,US,93500,Female,1965-06-22,570-08-8904,-135.752957,48.9611645
+54,C_54,I,A,USD,false,1,0,1000000,91963.63,,bank,Timothy,White,69597 Bass Passage,Vanessaville,DC,US,42036,Male,1924-09-17,346-78-3168,-156.302783,21.0883325
+55,C_55,I,A,USD,false,1,0,1000000,51623.25,,bank,Andre,Lang,0925 Ricky Mill Suite 994,Annamouth,MT,US,24181,Male,1932-04-19,397-09-5860,-128.296526,-56.8842915
+56,C_56,I,A,USD,false,1,0,1000000,55612.16,,bank,Kelli,Copeland,69057 Alvarez Walks,New Michelleview,AK,US,85435,Female,1919-06-29,368-13-7724,-162.246916,-48.5879665
+57,C_57,I,A,USD,false,1,0,1000000,55589.58,,bank,Gary,Burch,395 Timothy Road,Williamsbury,SC,US,37407,Male,1951-01-16,168-54-7585,15.037922,61.768246
+58,C_58,I,A,USD,true,1,0,1000000,78165.31,,bank,Brittany,Hernandez,90622 Anthony Islands,North Brandonville,OK,US,80648,Female,2001-06-23,807-04-6861,54.217435,62.4831025
+59,C_59,I,A,USD,false,1,0,1000000,79680.05,,bank,Alison,Carr,66376 Sabrina Garden Suite 691,Whitneyhaven,MN,US,71586,Female,1965-04-01,243-36-0661,148.010174,-3.679148
+60,C_60,I,A,USD,false,1,0,1000000,81336.53,,bank,Kara,Moore,180 Jennifer Burg Suite 661,Munozburgh,GA,US,45130,Female,2016-09-26,886-37-8251,-119.593624,8.860074
+61,C_61,I,A,USD,false,1,0,1000000,97402.89,,bank,Monica,Reed,8034 Jennifer Islands Suite 604,Johnsonchester,KY,US,49674,Female,1925-07-13,628-46-2716,-163.235767,25.582253
+62,C_62,I,A,USD,false,1,0,1000000,87613.21,,bank,Michael,Lang,16882 Eric Expressway Apt. 082,Kellyport,VT,US,44432,Male,2016-03-28,859-53-4289,-95.002763,1.932063
+63,C_63,I,A,USD,true,1,0,1000000,87188.10,,bank,Melinda,Moore,268 Young Lane Suite 678,Tamichester,GU,US,13308,Female,1910-10-09,610-82-8473,-122.654707,83.7732945
+64,C_64,I,A,USD,false,1,0,1000000,58646.40,,bank,Michael,Estrada,9261 Alex Lake,Floresmouth,MN,US,77080,Male,2004-05-27,235-21-9202,116.154583,-69.079963
+65,C_65,I,A,USD,false,1,0,1000000,95523.12,,bank,Carolyn,Alexander,28693 Erickson Lodge,Andrewberg,PW,US,51385,Female,1916-06-04,385-12-9638,37.533795,-0.2008135
+66,C_66,I,A,USD,false,1,0,1000000,95947.05,,bank,Victor,Mendoza,79148 Pierce Lock Suite 423,Erikberg,NH,US,09524,Male,1975-11-14,420-72-1512,-37.446505,39.464255
+67,C_67,I,A,USD,false,1,0,1000000,91414.47,,bank,Melissa,Guzman,2512 Mackenzie Dam,North Antonio,MO,US,73675,Female,1993-01-14,110-61-9168,6.444823,2.0855595
+68,C_68,I,A,USD,false,1,0,1000000,54037.82,,bank,Courtney,Richardson,37443 Tyler Pass,Christopherport,OK,US,55851,Female,1954-06-01,777-19-3796,-25.433396,-36.497695
+69,C_69,I,A,USD,false,1,0,1000000,85699.89,,bank,Jeffrey,Howard,546 Mariah Crest Suite 587,Lake Jenna,SC,US,47523,Male,1956-09-13,785-92-4639,-123.473597,38.7758685
+70,C_70,I,A,USD,false,1,0,1000000,75971.26,,bank,Robert,Reynolds,8799 Emma Parkway Suite 735,North Thomasfurt,MH,US,30303,Male,1915-11-04,790-06-6661,-129.814276,-19.2772805
+71,C_71,I,A,USD,false,1,0,1000000,76854.87,,bank,Kelly,Howell,12503 Alan Place Apt. 219,North Joyce,ID,US,00696,Female,1958-05-13,550-23-3839,-58.157297,21.514800
+72,C_72,I,A,USD,false,1,0,1000000,63391.34,,bank,Linda,Davis,3609 Johnson Key,Margaretmouth,SD,US,18114,Female,2019-11-04,732-14-4471,-167.044369,-51.909753
+73,C_73,I,A,USD,false,1,0,1000000,88649.24,,bank,Julie,Gibson,3953 Romero Crest,Lake Rhondaville,NY,US,59180,Female,1949-08-14,427-33-6181,-137.828846,61.661454
+74,C_74,I,A,USD,false,1,0,1000000,90334.95,,bank,David,Woods,3576 Sergio Avenue,Benjaminmouth,IN,US,56794,Male,1926-07-22,452-37-5898,170.734311,40.509401
+75,C_75,I,A,USD,false,1,0,1000000,88483.23,,bank,Jeanette,Lopez,134 Sophia Drives,Benjaminburgh,WI,US,61921,Female,1967-10-01,172-51-0773,1.979785,49.8312565
+76,C_76,I,A,USD,false,1,0,1000000,65098.15,,bank,Sarah,Peters,88996 Cynthia River Suite 939,Johnsonfort,MH,US,79664,Female,1932-12-24,045-08-2199,-49.621046,28.975768
+77,C_77,I,A,USD,true,1,0,1000000,86812.36,,bank,Sarah,Robbins,186 Mcclure Junction,Jenningsburgh,MN,US,73556,Female,1955-07-15,680-41-7678,-143.856122,-50.651445
+78,C_78,I,A,USD,false,1,0,1000000,54320.75,,bank,Joshua,Schultz,67835 Andrew Fords,Port Robertshire,VI,US,54423,Male,2021-08-22,685-18-8698,165.191225,41.455235
+79,C_79,I,A,USD,false,1,0,1000000,84031.61,,bank,Holly,Owens,97036 Collins Summit,Port Lindseytown,OR,US,67694,Female,1922-12-25,458-36-3597,25.469825,13.0956685
+80,C_80,I,A,USD,false,1,0,1000000,51523.87,,bank,Lawrence,Walls,94102 Sims Port Suite 187,Florestown,DE,US,57418,Male,1925-09-11,146-04-1949,50.731337,-23.460180
+81,C_81,I,A,USD,false,1,0,1000000,50307.09,,bank,Sabrina,Walsh,6154 Jensen Route Apt. 880,Zacharytown,GA,US,65441,Female,1940-02-11,141-45-1628,149.346539,60.6568055
+82,C_82,I,A,USD,false,1,0,1000000,55213.76,,bank,Daniel,Thompson,9181 Todd Pike,West Colin,MP,US,93220,Male,1987-02-24,236-52-3300,146.836804,27.8389595
+83,C_83,I,A,USD,false,1,0,1000000,82639.57,,bank,Rachael,Morris,583 Steven Island Apt. 480,Lake Loriport,VI,US,93087,Female,1920-01-05,015-38-1879,-90.620345,-16.0982425
+84,C_84,I,A,USD,false,1,0,1000000,99188.12,,bank,Danielle,Beasley,2436 Johnson Village Apt. 415,Tiffanyport,AR,US,93360,Female,1970-02-16,266-77-0919,28.635592,22.365985
+85,C_85,I,A,USD,false,1,0,1000000,73378.76,,bank,Cynthia,Parker,5877 Rodney Extension,East Jasminfort,MS,US,04512,Female,2005-11-02,132-57-0249,14.440567,51.0585465
+86,C_86,I,A,USD,false,1,0,1000000,82221.07,,bank,Dale,Hernandez,4466 Terry Centers,Lake Olivia,NC,US,47333,Male,2002-11-16,808-19-3053,116.179863,-22.7838955
+87,C_87,I,A,USD,false,1,0,1000000,79313.45,,bank,Richard,Boone,62382 Julie Pine,Laurentown,VA,US,60909,Male,1917-06-08,172-49-8283,28.254082,-32.960278
+88,C_88,I,A,USD,false,1,0,1000000,92067.46,,bank,Stephanie,Moore,21801 Suzanne Gardens Suite 746,Dorothyview,VA,US,10545,Female,1938-05-08,215-06-0880,94.488964,-72.005489
+89,C_89,I,A,USD,false,1,0,1000000,98481.81,,bank,Michael,Anderson,2984 Carmen Keys,Michaelport,NY,US,84604,Male,1965-10-25,752-26-9971,33.087673,1.1008665
+90,C_90,I,A,USD,false,1,0,1000000,90892.43,,bank,Charles,Harper,74559 Foster Locks Suite 933,Robinsonhaven,GA,US,67302,Male,1997-12-18,545-65-7797,3.456930,-20.4821415
+91,C_91,I,A,USD,false,1,0,1000000,66581.27,,bank,Todd,Lopez,803 Ellis Cliff Apt. 391,Tiffanytown,GU,US,28888,Male,1930-05-03,678-47-9985,-36.293468,-87.5812155
+92,C_92,I,A,USD,false,1,0,1000000,53593.84,,bank,Michael,Tate,92436 Rodgers Walks,Christopherchester,WY,US,15618,Male,1911-11-09,545-35-5781,-68.000766,13.0663305
+93,C_93,I,A,USD,false,1,0,1000000,94659.82,,bank,Andre,Holland,72998 Willis Wall,North Brian,MH,US,79731,Male,2018-03-06,515-11-6871,-13.403876,-0.9484285
+94,C_94,I,A,USD,false,1,0,1000000,63949.83,,bank,Debra,Brewer,052 Werner Shoals,Toddfort,PA,US,43831,Female,1963-05-28,773-21-1765,95.108803,-20.4902305
+95,C_95,I,A,USD,false,1,0,1000000,87932.84,,bank,Dennis,Glover,762 Miranda Spur Apt. 912,Phillipsville,TX,US,56307,Male,1983-11-23,522-69-1225,-175.663712,-79.0215505
+96,C_96,I,A,USD,false,1,0,1000000,93250.68,,bank,Amber,Casey,66705 Christopher Lock,North Jason,PW,US,04119,Female,1925-07-27,749-91-4870,38.342939,18.641486
+97,C_97,I,A,USD,false,1,0,1000000,58402.83,,bank,Derek,Lewis,782 Dawn Radial,Port Christopher,NJ,US,38224,Male,1989-08-14,886-82-0845,101.035447,-71.1655905
+98,C_98,I,A,USD,false,1,0,1000000,59698.36,,bank,Karina,Nichols,28215 Joy Islands Apt. 591,West Jamiemouth,MA,US,89930,Female,1919-12-27,324-57-6287,36.522403,55.548157
+99,C_99,I,A,USD,false,1,0,1000000,71130.25,,bank,Mary,Warren,132 Poole Pass Suite 212,North Patrick,OK,US,15689,Female,1975-10-10,361-86-7815,35.889428,68.7728315
+100,C_100,I,A,USD,false,1,0,1000000,92207.89,,bank,Jeffrey,Montgomery,538 Jessica Tunnel Suite 580,New Chase,DE,US,48734,Male,1973-07-04,532-65-1830,-158.385962,62.9827075
+101,C_101,I,A,USD,false,1,0,1000000,92596.72,,bank,Sandra,Dominguez,54776 Lisa Trail Apt. 752,Port Joannehaven,TN,US,22113,Female,1989-08-27,595-62-3491,-165.346050,31.9336895
+102,C_102,I,A,USD,false,1,0,1000000,99646.55,,bank,Briana,Wolf,3564 Jason Garden Suite 739,Claireberg,MD,US,32426,Female,1974-01-17,550-91-9773,-118.399297,29.961665
+103,C_103,I,A,USD,false,1,0,1000000,63653.90,,bank,Ryan,Stewart,593 Amber Fords,Peterhaven,ID,US,46893,Male,1912-08-09,197-26-9895,-92.192275,59.577272
+104,C_104,I,A,USD,false,1,0,1000000,81143.28,,bank,Kristin,Parker,476 Allison Summit Suite 010,Tonyaview,RI,US,94899,Female,2014-06-30,874-62-6144,-61.682888,-65.929708
+105,C_105,I,A,USD,false,1,0,1000000,93649.91,,bank,Rodney,Blair,098 Sosa Viaduct,New Jimmyton,WY,US,13015,Male,1920-10-23,603-51-2104,129.113106,74.045342
+106,C_106,I,A,USD,false,1,0,1000000,68829.98,,bank,Morgan,Nelson,4229 Derrick Wells,West Tyler,ME,US,19541,Female,1919-04-20,864-85-6668,-82.291058,-36.614922
+107,C_107,I,A,USD,false,1,0,1000000,79349.22,,bank,Rodney,Yang,8724 Rachel Squares,Latoyabury,AL,US,19300,Male,1988-07-21,429-17-2384,80.364516,54.5661785
+108,C_108,I,A,USD,false,1,0,1000000,61229.07,,bank,Juan,Jones,27573 Leonard Field Apt. 574,Amandaport,IL,US,37953,Male,1953-10-07,605-84-1560,97.512852,-52.8272275
+109,C_109,I,A,USD,false,1,0,1000000,92834.29,,bank,Patricia,Marquez,64832 Joseph Islands Suite 805,Fitzgeraldfurt,OH,US,16998,Female,1976-03-25,672-05-5004,151.088391,29.097534
+110,C_110,I,A,USD,false,1,0,1000000,72135.80,,bank,Benjamin,Poole,73611 Martinez Spring Suite 203,East Cody,MS,US,53780,Male,1934-11-12,204-28-8058,-131.221382,-38.604016
+111,C_111,I,A,USD,false,1,0,1000000,74313.02,,bank,Charles,Chavez,479 Michael Trafficway Apt. 037,New Evelyn,GU,US,01420,Male,1920-10-20,283-84-4752,30.551570,-1.672805
+112,C_112,I,A,USD,false,1,0,1000000,82797.46,,bank,Joseph,Schultz,191 Wood Road Apt. 326,Port Andrew,LA,US,19372,Male,1995-12-13,150-15-8322,-7.413173,-4.048540
+113,C_113,I,A,USD,false,1,0,1000000,65956.18,,bank,Dwayne,Stanley,3348 Curtis Street,Fosterberg,NV,US,10607,Male,1971-04-20,851-78-8017,7.863564,-48.2996555
+114,C_114,I,A,USD,false,1,0,1000000,90642.45,,bank,Ashlee,Sanchez,3122 Moon Plain Suite 204,Berrystad,SD,US,13414,Female,1915-02-27,882-91-9656,-133.685782,34.997729
+115,C_115,I,A,USD,false,1,0,1000000,72962.02,,bank,Sean,Mata,862 Colleen Springs Apt. 730,East Jasmine,TX,US,19409,Male,2008-08-05,831-76-2906,-143.539004,-61.651620
+116,C_116,I,A,USD,false,1,0,1000000,71477.23,,bank,Victoria,Delgado,794 Braun Station Apt. 270,Marvinchester,MS,US,03407,Female,1934-10-29,092-76-2360,-46.932696,50.3621135
+117,C_117,I,A,USD,false,1,0,1000000,86284.53,,bank,Dennis,Hampton,46988 Jennifer Stravenue Suite 341,Banksview,IA,US,85341,Male,1920-01-10,149-58-0431,27.402724,82.6905475
+118,C_118,I,A,USD,false,1,0,1000000,83338.70,,bank,Jennifer,Franklin,967 Ethan Avenue Suite 164,South Nicole,KS,US,68053,Female,1941-04-21,895-23-0255,-68.465816,0.9696535
+119,C_119,I,A,USD,false,1,0,1000000,85483.61,,bank,David,Juarez,064 Howell Fields,Robertberg,SD,US,16744,Male,2016-01-03,453-23-5801,49.613044,27.1346615
+120,C_120,I,A,USD,false,1,0,1000000,93747.07,,bank,Megan,Phillips,87210 Pena Freeway,Walshville,MT,US,08009,Female,1929-12-20,286-68-2039,119.521613,89.525953
+121,C_121,I,A,USD,false,1,0,1000000,90455.07,,bank,Adrian,Smith,01557 John Skyway,Greenburgh,NV,US,52972,Male,1948-06-09,213-40-8926,-118.239414,44.4916505
+122,C_122,I,A,USD,false,1,0,1000000,70378.61,,bank,Carol,Bush,89403 Gabriella Mills,East Steven,MH,US,91501,Female,1976-06-06,575-49-0268,-114.125248,-63.0371665
+123,C_123,I,A,USD,false,1,0,1000000,82190.94,,bank,Lori,Hines,46379 Lopez Route Apt. 969,West Michael,MD,US,62485,Female,1964-06-08,763-92-4150,4.998636,-16.766702
+124,C_124,I,A,USD,false,1,0,1000000,93186.95,,bank,Tiffany,Guzman,75057 Lowe Brooks,South Jessicaburgh,ID,US,51445,Female,1974-03-14,034-63-6783,70.716241,28.3427745
+125,C_125,I,A,USD,false,1,0,1000000,52785.26,,bank,Allison,Woods,317 Donna Stravenue,Austinborough,CO,US,56609,Female,1996-06-20,757-01-3239,151.066814,-10.767189
+126,C_126,I,A,USD,false,1,0,1000000,82960.95,,bank,Jeffrey,Roberts,8410 Michael Row Suite 634,Bonillaside,AL,US,82801,Male,1966-06-22,409-87-7071,32.002723,67.355012
+127,C_127,I,A,USD,false,1,0,1000000,76372.84,,bank,Gina,White,8546 Michael Manors Suite 741,West Jerry,AK,US,82408,Female,2013-07-19,899-09-1632,-84.882605,72.120151
+128,C_128,I,A,USD,false,1,0,1000000,70157.00,,bank,Kara,Quinn,86624 Alexander Place,East Timothyville,TN,US,15799,Female,1995-04-24,313-39-6410,-162.655577,67.2961805
+129,C_129,I,A,USD,false,1,0,1000000,55952.28,,bank,Elizabeth,Brown,1043 Schultz Plaza Apt. 616,North Lauraland,MN,US,01427,Female,1914-01-15,045-20-9732,-89.139548,36.0927155
+130,C_130,I,A,USD,false,1,0,1000000,64407.70,,bank,Scott,Benitez,82111 James Courts,Reynoldsville,NJ,US,94561,Male,1994-07-19,173-70-1670,-105.806224,9.995255
+131,C_131,I,A,USD,true,1,0,1000000,87499.30,,bank,Susan,Allen,218 Jessica Plaza Apt. 165,Annashire,ND,US,51932,Female,1990-08-23,157-78-6638,15.608887,-13.865184
+132,C_132,I,A,USD,false,1,0,1000000,94215.51,,bank,Shane,Jackson,221 Navarro Shores,West Tammy,GU,US,18700,Male,1986-05-11,833-96-5301,-72.569170,79.8648605
+133,C_133,I,A,USD,false,1,0,1000000,99331.88,,bank,Amanda,Todd,45319 Michael Locks Apt. 468,Anthonymouth,IN,US,52153,Female,1972-07-02,798-21-4292,-154.941637,-18.1414305
+134,C_134,I,A,USD,false,1,0,1000000,87724.44,,bank,Benjamin,Mitchell,604 Diana Viaduct Apt. 458,East Tylershire,RI,US,78265,Male,1990-09-05,044-34-0086,-163.870176,72.883296
+135,C_135,I,A,USD,true,1,0,1000000,94008.42,,bank,Kevin,Nixon,3983 Dawn Terrace,South Nancy,TN,US,59436,Male,2021-12-25,355-47-1918,-171.034924,22.4182105
+136,C_136,I,A,USD,false,1,0,1000000,91306.45,,bank,Michael,Moore,69039 Gutierrez Lock Apt. 266,Wilcoxborough,KS,US,08780,Male,1976-02-25,309-96-3025,-126.986506,-48.6012055
+137,C_137,I,A,USD,false,1,0,1000000,58242.17,,bank,Allison,Pineda,8658 Henry Crest Suite 954,Jenniferfurt,PA,US,67852,Female,1969-10-17,515-26-6913,-33.835458,86.1289735
+138,C_138,I,A,USD,false,1,0,1000000,84519.44,,bank,Kelly,Peters,68140 Trevor Valleys,Vaughanstad,OH,US,62334,Female,1995-03-27,487-75-3032,135.218899,-83.2917985
+139,C_139,I,A,USD,false,1,0,1000000,93457.21,,bank,William,Burns,6131 Kristina Motorway,South Leslie,NV,US,91571,Male,2021-01-21,259-63-5590,101.831881,-29.850615
+140,C_140,I,A,USD,false,1,0,1000000,87601.58,,bank,Laura,Williams,468 Kristopher Curve Apt. 215,North Anthony,NJ,US,10721,Female,1983-02-24,577-18-9227,-41.331707,-68.269974
+141,C_141,I,A,USD,false,1,0,1000000,63824.05,,bank,Patricia,Sandoval,5051 Claudia Creek,Dianeshire,MN,US,24158,Female,1965-04-22,415-82-3506,-130.968264,22.141923
+142,C_142,I,A,USD,false,1,0,1000000,85002.07,,bank,Gwendolyn,Martin,7626 Kathleen Road Apt. 412,Morrisport,AS,US,59466,Female,2023-05-21,722-44-3590,86.943343,-48.5673255
+143,C_143,I,A,USD,false,1,0,1000000,69492.84,,bank,Matthew,Fowler,521 Martin Knolls Apt. 165,Kyletown,ID,US,86792,Male,1929-11-22,572-21-7787,-50.754665,-68.6971695
+144,C_144,I,A,USD,false,1,0,1000000,71631.20,,bank,Steven,Campbell,106 Peter Oval Apt. 201,Lake David,MO,US,80128,Male,1977-02-05,103-28-4951,36.337906,-43.802461
+145,C_145,I,A,USD,false,1,0,1000000,86540.17,,bank,Charles,Thompson,2642 Mallory Corner Apt. 857,West Zacharyport,NH,US,07875,Male,1936-06-09,237-09-2059,56.209585,26.556707
+146,C_146,I,A,USD,false,1,0,1000000,83805.14,,bank,Victoria,Humphrey,52339 Keller Wall,Brittanyfort,MH,US,66601,Female,1999-12-13,019-80-2953,-34.192190,-37.4644295
+147,C_147,I,A,USD,false,1,0,1000000,56800.25,,bank,Cristina,Rivera,7210 Moreno Pines,Bergmouth,PA,US,44788,Female,1967-07-20,533-93-0427,78.683960,-52.4713085
+148,C_148,I,A,USD,false,1,0,1000000,82040.20,,bank,Tina,Downs,10543 Emma Trace,Lake Gregory,WY,US,47666,Female,2020-07-30,635-87-6032,44.801310,-33.681746
+149,C_149,I,A,USD,false,1,0,1000000,52984.82,,bank,Beverly,Pruitt,390 Rojas Mall,Port James,OR,US,83879,Female,2001-07-31,769-36-4831,62.882839,1.8722875
+150,C_150,I,A,USD,false,1,0,1000000,60348.92,,bank,Nancy,Gates,4847 Morales Isle Suite 403,Mullinsfurt,NE,US,97407,Female,2004-06-17,133-23-7821,-77.800590,-44.1478675
+151,C_151,I,A,USD,false,1,0,1000000,91240.00,,bank,Sarah,Brown,48829 Doris Crossing,Gileschester,HI,US,15735,Female,1914-08-20,755-12-1548,137.441368,-53.132538
+152,C_152,I,A,USD,false,1,0,1000000,95645.94,,bank,Danny,Harper,551 Nicholas Crossroad,Ashleyhaven,IL,US,80092,Male,1961-09-14,294-13-2300,44.610040,-64.3514215
+153,C_153,I,A,USD,false,1,0,1000000,62707.91,,bank,Ariel,Davis,224 Sparks Islands,South Valerie,MA,US,72097,Female,1911-07-16,194-44-7131,-46.733159,-1.175941
+154,C_154,I,A,USD,false,1,0,1000000,88220.40,,bank,Gail,Manning,5218 Acevedo Avenue,Port Donald,OH,US,74865,Female,2008-03-05,710-09-6383,-34.086624,35.686320
+155,C_155,I,A,USD,false,1,0,1000000,59120.51,,bank,Tiffany,Aguirre,71245 Lawson Overpass Suite 095,South Lindsey,ME,US,23884,Female,1928-05-17,432-97-8388,63.106767,53.398295
+156,C_156,I,A,USD,true,1,0,1000000,74899.77,,bank,Wesley,Pena,5285 Lisa Course,North James,MH,US,94559,Male,1932-05-30,813-49-5404,-38.099381,5.306789
+157,C_157,I,A,USD,false,1,0,1000000,67422.68,,bank,Hannah,Owen,047 Barr Fork Suite 089,Rittermouth,IL,US,74257,Female,1930-09-27,734-36-3272,-116.232061,4.6229545
+158,C_158,I,A,USD,false,1,0,1000000,54201.14,,bank,Billy,Hudson,4926 Elizabeth View,Port Jacobfurt,MT,US,10767,Male,1972-05-04,222-42-7418,119.516393,73.151504
+159,C_159,I,A,USD,false,1,0,1000000,71658.76,,bank,Carolyn,Fischer,99907 Lewis Circle,Joneston,PA,US,25156,Female,1933-04-26,298-74-9305,-132.946863,-49.642468
+160,C_160,I,A,USD,false,1,0,1000000,77599.35,,bank,Robert,Evans,548 Beverly Bridge,Gomezmouth,KY,US,45848,Male,1927-06-30,040-93-0238,164.623848,70.250032
+161,C_161,I,A,USD,false,1,0,1000000,92562.21,,bank,Carolyn,James,100 David Lights Apt. 381,Port Blakefurt,GU,US,37592,Female,1987-12-21,646-54-8500,-72.093753,47.945264
+162,C_162,I,A,USD,false,1,0,1000000,55140.34,,bank,Daniel,Gonzalez,067 Mary Flats,Stephenburgh,OK,US,26348,Male,1944-04-07,332-43-4994,-102.752930,-41.5478395
+163,C_163,I,A,USD,false,1,0,1000000,64381.02,,bank,Mason,Warren,0619 Martin Light Apt. 662,Stephensonstad,PW,US,06531,Male,1935-03-28,410-63-3675,126.964729,-68.9972545
+164,C_164,I,A,USD,false,1,0,1000000,50203.55,,bank,Cindy,Wallace,40512 Amy Glens,Port Kristinaberg,AZ,US,68013,Female,1981-04-28,799-54-0983,-46.225111,68.2010245
+165,C_165,I,A,USD,false,1,0,1000000,60429.09,,bank,Cole,Gray,147 Guerra Centers Suite 154,West Jesse,MP,US,26618,Male,1972-04-02,258-86-2768,5.939706,14.870638
+166,C_166,I,A,USD,false,1,0,1000000,63319.42,,bank,Harry,Hernandez,614 William Street,North Vincentchester,TX,US,72964,Male,1924-05-05,750-95-4829,-86.600905,40.470014
+167,C_167,I,A,USD,false,1,0,1000000,91002.33,,bank,Cassandra,Hines,217 Tate Island Suite 724,South Hannahland,NH,US,78285,Female,2010-12-29,237-38-1758,48.349068,78.2947295
+168,C_168,I,A,USD,false,1,0,1000000,96934.97,,bank,Paula,Velazquez,533 Denise Coves Apt. 892,Michaelhaven,IA,US,57134,Female,1979-09-01,192-44-2972,173.426668,-84.157794
+169,C_169,I,A,USD,false,1,0,1000000,60750.93,,bank,Tammy,Snyder,593 Jessica Points,Lake Franceshaven,RI,US,91999,Female,1949-01-28,632-12-3421,-157.811677,80.158981
+170,C_170,I,A,USD,false,1,0,1000000,74115.90,,bank,Theodore,Robbins,4547 Matthew Islands,Port Michael,MN,US,47480,Male,1933-07-22,404-81-9520,109.075542,-7.2679135
+171,C_171,I,A,USD,false,1,0,1000000,76186.90,,bank,Victor,Molina,150 Thomas Village,North Diana,OH,US,38751,Male,1952-02-17,579-11-3654,178.461802,26.215396
+172,C_172,I,A,USD,false,1,0,1000000,74540.24,,bank,Sean,Crawford,17463 Jessica Mission Apt. 202,North Mitchellton,TN,US,29917,Male,1946-05-28,810-48-8789,-11.689606,85.6902085
+173,C_173,I,A,USD,false,1,0,1000000,97962.23,,bank,Jerry,Smith,803 Joyce Fort Apt. 210,New Marychester,NH,US,85752,Male,1981-09-14,652-68-5223,100.314543,-33.4318405
+174,C_174,I,A,USD,false,1,0,1000000,97504.27,,bank,William,Mccarty,469 Stephen Port Apt. 648,Joannmouth,OK,US,92863,Male,1969-10-17,464-58-1692,135.231417,-6.504621
+175,C_175,I,A,USD,false,1,0,1000000,51926.05,,bank,Kenneth,Contreras,650 Maureen Stravenue,Marissaville,OH,US,26243,Male,2018-11-19,019-03-5082,68.352761,-60.4264715
+176,C_176,I,A,USD,false,1,0,1000000,70403.90,,bank,Alexis,Trevino,3484 Gonzalez Summit,Morrisonfort,ME,US,43883,Female,2000-03-11,616-38-1749,3.460850,-65.526899
+177,C_177,I,A,USD,true,1,0,1000000,76407.83,,bank,Ian,Atkins,5493 Andrea Motorway Suite 471,Lake Wendyside,AR,US,33397,Male,1951-12-16,394-86-5591,-86.572673,-13.5680805
+178,C_178,I,A,USD,true,1,0,1000000,82499.93,,bank,Rhonda,Guerra,845 Chang Road,Charlesstad,MP,US,03097,Female,1930-05-12,631-38-4333,83.669881,-89.509393
+179,C_179,I,A,USD,false,1,0,1000000,76516.12,,bank,Daniel,Thompson,3106 Conner Rue,West Anthonytown,NH,US,33274,Male,1922-02-11,787-95-6558,121.704290,-75.034518
+180,C_180,I,A,USD,false,1,0,1000000,91008.42,,bank,Amber,Meyer,04689 Pham Isle,Silvaview,MA,US,30834,Female,1961-06-30,725-03-6269,-8.902922,-78.5548495
+181,C_181,I,A,USD,false,1,0,1000000,54928.60,,bank,Joshua,Hamilton,183 Lori Plain,Edwardbury,OK,US,65046,Male,1962-01-07,177-05-5910,-21.343194,1.703951
+182,C_182,I,A,USD,false,1,0,1000000,73059.20,,bank,Angela,Hernandez,0012 Kline Expressway,North Lauraburgh,OR,US,20807,Female,1931-11-09,399-03-6050,-25.266772,2.417380
+183,C_183,I,A,USD,false,1,0,1000000,91519.37,,bank,Travis,Andrews,90555 Valerie Springs,Michaelchester,ID,US,47804,Male,2002-12-24,218-68-3040,142.277363,-53.7800595
+184,C_184,I,A,USD,false,1,0,1000000,58534.60,,bank,Debbie,Gibbs,254 Baker Ferry,Barnesville,MD,US,20124,Female,1949-03-12,790-11-6131,20.694992,-18.0394435
+185,C_185,I,A,USD,false,1,0,1000000,58683.13,,bank,Ryan,Ferrell,63329 Riddle Meadow Apt. 052,South Robertshire,AS,US,12916,Male,1943-10-09,707-26-7060,-178.348316,74.6382765
+186,C_186,I,A,USD,false,1,0,1000000,80824.68,,bank,Calvin,Smith,9666 Kyle Expressway Suite 189,Moorefurt,IN,US,94619,Male,2015-02-24,808-99-5139,77.627585,3.448980
+187,C_187,I,A,USD,true,1,0,1000000,57253.04,,bank,Daniel,Flynn,9072 Clark Bridge,Cindybury,PW,US,01377,Male,1955-02-01,881-33-9458,117.280285,-36.4360955
+188,C_188,I,A,USD,false,1,0,1000000,77265.72,,bank,Michael,George,757 Anthony Rapid Suite 654,West Susan,KS,US,52560,Male,2002-06-02,474-26-2996,86.603610,32.404950
+189,C_189,I,A,USD,false,1,0,1000000,56218.53,,bank,Anthony,Martinez,84614 Martin Throughway Apt. 422,Jasonshire,OR,US,21365,Male,2018-08-13,589-37-4646,-80.290321,-73.603701
+190,C_190,I,A,USD,false,1,0,1000000,59342.58,,bank,Barbara,Henderson,64598 Jefferson Point Apt. 056,Nortonshire,AS,US,30502,Female,1987-08-24,607-33-8938,4.595814,-49.665761
+191,C_191,I,A,USD,false,1,0,1000000,66713.22,,bank,Marvin,Powell,5055 Ryan Station,North Christineborough,IL,US,42805,Male,1914-12-17,086-05-5808,-68.432264,20.518265
+192,C_192,I,A,USD,false,1,0,1000000,89155.27,,bank,Christina,Harris,3511 Joshua Shoals,East Robin,MS,US,57548,Female,2021-08-06,288-54-3526,93.592637,-62.6886875
+193,C_193,I,A,USD,false,1,0,1000000,80558.10,,bank,Gary,Howell,548 Victor Forest Apt. 914,Davidsonton,CT,US,43469,Male,2022-06-09,101-31-4965,126.314222,-72.578247
+194,C_194,I,A,USD,false,1,0,1000000,80416.11,,bank,Robyn,Cook,53232 Jennifer Center Suite 788,South Misty,IL,US,82183,Female,1993-04-07,105-58-7385,-71.620132,84.303629
+195,C_195,I,A,USD,false,1,0,1000000,81388.00,,bank,Melanie,Knight,72939 Bell Greens Suite 229,Rodriguezbury,PA,US,45756,Female,1911-01-22,457-28-6480,-59.342271,-12.3283065
+196,C_196,I,A,USD,false,1,0,1000000,69837.53,,bank,Maria,Mccullough,0609 Kara Center,Mosesport,NV,US,43966,Female,1954-07-06,431-36-0716,2.012441,-78.0676805
+197,C_197,I,A,USD,false,1,0,1000000,98809.26,,bank,Bryan,Moore,081 Jason Prairie,Claytonville,CT,US,24182,Male,1937-12-08,495-78-4259,34.822388,-35.2108925
+198,C_198,I,A,USD,false,1,0,1000000,79761.91,,bank,Juan,Terry,32671 Jeremy Track Apt. 267,Scottborough,OH,US,05342,Male,1955-07-01,718-64-9386,-105.460642,-77.054345
+199,C_199,I,A,USD,false,1,0,1000000,81430.86,,bank,Cynthia,Dixon,779 Rivera Route Apt. 148,West Sandy,VA,US,40309,Female,1941-10-18,807-49-5281,-8.219012,-34.250404
+200,C_200,I,A,USD,false,1,0,1000000,53363.98,,bank,Jessica,Davis,3136 Leslie Manor Suite 348,Philipland,OR,US,62955,Female,1929-07-13,124-68-4369,-37.756103,-87.6850405
+201,C_201,I,A,USD,false,1,0,1000000,62489.97,,bank,Kevin,Solomon,92066 Jacobson Unions,Williamsfort,TN,US,75548,Male,1914-04-24,632-72-3877,-91.853015,-0.8278745
+202,C_202,I,A,USD,false,1,0,1000000,79294.42,,bank,Matthew,Smith,3142 John Bridge Apt. 744,South Stevenburgh,AZ,US,22408,Male,1956-07-15,094-41-0428,68.125162,46.667718
+203,C_203,I,A,USD,false,1,0,1000000,97792.77,,bank,Amy,Krueger,67723 Michelle Path Apt. 838,Morrisbury,WA,US,78797,Female,2025-01-07,089-91-9847,134.280461,-40.209095
+204,C_204,I,A,USD,false,1,0,1000000,85177.74,,bank,Timothy,Camacho,5462 Jennifer Fall,South Kara,PW,US,92827,Male,1933-04-03,620-69-9482,-152.511559,-75.3275405
+205,C_205,I,A,USD,false,1,0,1000000,52716.54,,bank,Danielle,Bell,7944 Gamble Curve Apt. 781,East Frankchester,IL,US,71152,Female,1951-04-04,520-95-0179,99.020998,-73.044705
+206,C_206,I,A,USD,false,1,0,1000000,90388.39,,bank,Thomas,Sloan,1172 Navarro Lodge Apt. 564,Donaldshire,NV,US,72076,Male,1979-04-10,574-86-0723,-61.879573,29.3178895
+207,C_207,I,A,USD,false,1,0,1000000,60614.76,,bank,Aaron,Patterson,88034 Joseph Passage Suite 462,East Colleenborough,NV,US,39085,Male,1974-01-21,011-89-2729,-124.567225,8.5228065
+208,C_208,I,A,USD,false,1,0,1000000,79771.28,,bank,Cynthia,Willis,8592 Mark Shores Apt. 664,Veronicahaven,VT,US,99640,Female,1914-06-08,504-32-3365,-29.153371,-46.8661105
+209,C_209,I,A,USD,false,1,0,1000000,59554.60,,bank,Lisa,Lang,01366 Mccoy Burgs Apt. 944,New Jamesfort,MS,US,15293,Female,1950-08-27,682-59-5960,-59.809607,76.1670095
+210,C_210,I,A,USD,false,1,0,1000000,53071.31,,bank,Roberto,Rhodes,7344 Kelsey Cliff,Savagefort,IL,US,64559,Male,1957-03-21,485-21-2529,-177.655425,50.890627
+211,C_211,I,A,USD,false,1,0,1000000,88633.97,,bank,Jessica,Maxwell,521 Gibson Fields Suite 602,Tiffanyside,LA,US,88068,Female,1910-06-04,505-09-7730,-23.665013,35.3319245
+212,C_212,I,A,USD,false,1,0,1000000,74292.73,,bank,Vickie,Fox,9143 Ford Mills Apt. 751,Deborahborough,OR,US,18254,Female,1986-04-12,182-94-0070,119.910216,66.872912
+213,C_213,I,A,USD,true,1,0,1000000,80244.00,,bank,John,Clark,742 Margaret Mews Suite 460,North Johnland,AZ,US,49707,Male,1941-03-21,019-23-7769,145.266203,-77.3385135
+214,C_214,I,A,USD,false,1,0,1000000,85239.30,,bank,Mark,Friedman,72333 Bryan Mission Suite 521,Port Donnaton,MH,US,07864,Male,1956-10-13,789-34-0159,85.412513,-19.8711535
+215,C_215,I,A,USD,true,1,0,1000000,79693.40,,bank,Richard,Hoffman,215 Fuller Vista,Port Amanda,RI,US,81859,Male,2021-08-01,537-32-2588,-80.510612,4.9489035
+216,C_216,I,A,USD,false,1,0,1000000,70825.41,,bank,Cynthia,Smith,6848 Daniel Locks Apt. 206,New Josephshire,VA,US,41836,Female,2018-12-04,023-30-5367,-119.838970,79.2074205
+217,C_217,I,A,USD,false,1,0,1000000,66092.77,,bank,Thomas,Brown,4701 Hall Groves,East Amystad,MN,US,35533,Male,1957-08-10,819-47-4585,-176.196447,-53.003010
+218,C_218,I,A,USD,false,1,0,1000000,76503.28,,bank,Jonathan,Hampton,16581 Gregory River,Port Angela,LA,US,92989,Male,1916-12-26,366-28-7568,138.087910,61.5905655
+219,C_219,I,A,USD,false,1,0,1000000,62300.39,,bank,Jay,Allen,173 Villegas Rest Suite 599,Port Pennyville,MD,US,51493,Male,2008-11-25,383-49-6354,120.283828,-14.2588885
+220,C_220,I,A,USD,false,1,0,1000000,63118.36,,bank,Kimberly,Williams,16323 Matthew Walk,Curtisville,WY,US,79810,Female,1927-12-06,367-60-6804,2.326068,-9.456196
+221,C_221,I,A,USD,false,1,0,1000000,90541.31,,bank,Barbara,Lowery,272 Fernandez Roads Suite 510,Lake Michael,TN,US,27172,Female,1952-04-16,050-13-7175,161.276307,57.791760
+222,C_222,I,A,USD,false,1,0,1000000,67109.89,,bank,Douglas,Gregory,77131 Jamie Rue,West Nathan,ME,US,91568,Male,1949-07-13,061-45-2700,40.509104,-68.9845835
+223,C_223,I,A,USD,false,1,0,1000000,86050.51,,bank,Ariana,Anderson,277 Smith Brooks Apt. 770,New Brian,CT,US,50147,Female,1965-06-28,581-39-9381,27.382013,-88.5004085
+224,C_224,I,A,USD,false,1,0,1000000,83975.59,,bank,Tara,Ruiz,329 Steven Fall,Leehaven,WI,US,06440,Female,1966-06-06,275-84-7439,1.471087,75.104725
+225,C_225,I,A,USD,false,1,0,1000000,73270.25,,bank,David,Matthews,90777 Coleman Track,North Jessicamouth,MS,US,64189,Male,1972-04-02,205-73-5485,-75.690689,-48.0758915
+226,C_226,I,A,USD,false,1,0,1000000,89274.61,,bank,Katherine,Garcia,9146 Bryan Land,Hernandezchester,AS,US,70651,Female,1959-03-05,809-47-6540,10.964143,20.457033
+227,C_227,I,A,USD,false,1,0,1000000,66519.80,,bank,Lori,Dennis,75315 Nicholas Manor,New Ronald,IA,US,85756,Female,1984-10-31,430-41-1901,-170.954529,-34.4223995
+228,C_228,I,A,USD,false,1,0,1000000,50181.20,,bank,Paul,Tucker,41323 Walsh Hill,East Deborah,NM,US,01415,Male,1982-04-11,004-40-7263,-36.288638,-36.978427
+229,C_229,I,A,USD,false,1,0,1000000,92423.45,,bank,Cassandra,Gibson,542 Kim Lodge,Michaelfort,PR,US,54847,Female,1940-10-31,430-84-7166,83.344722,-73.4427515
+230,C_230,I,A,USD,false,1,0,1000000,87470.56,,bank,Michael,Beltran,0575 Leach Course Suite 496,Nicolemouth,DE,US,45924,Male,1958-01-15,034-51-8875,8.667649,81.153713
+231,C_231,I,A,USD,false,1,0,1000000,86915.73,,bank,Joshua,Robinson,789 Robinson Stravenue,West Zacharyside,ID,US,79807,Male,1923-07-08,415-16-8999,-151.170622,-19.5738145
+232,C_232,I,A,USD,false,1,0,1000000,96003.22,,bank,Nancy,Jarvis,2890 Wright Groves,West Fernando,ID,US,64817,Female,2025-06-07,278-45-3087,126.796188,-2.5051305
+233,C_233,I,A,USD,false,1,0,1000000,70408.90,,bank,Johnathan,Hill,39936 Todd Hollow Apt. 143,North Michaelmouth,LA,US,41369,Male,1988-09-09,381-68-9974,-121.376413,78.1912735
+234,C_234,I,A,USD,false,1,0,1000000,71311.41,,bank,Brandon,Williams,1829 Bishop Radial Suite 854,Lake Derrick,CA,US,20604,Male,2014-05-18,226-84-8283,11.088665,14.5935565
+235,C_235,I,A,USD,false,1,0,1000000,80632.15,,bank,Justin,Garcia,897 Kim Plains,Smithchester,OR,US,72912,Male,1919-07-09,346-54-8715,-15.454456,84.1018635
+236,C_236,I,A,USD,false,1,0,1000000,93609.25,,bank,Tina,White,99488 Kramer Lakes Apt. 055,Hernandezview,AR,US,08720,Female,2006-02-01,671-39-8359,-98.264647,-47.0317135
+237,C_237,I,A,USD,false,1,0,1000000,64055.18,,bank,Richard,Washington,270 Lindsey Knoll,Ronaldbury,DE,US,54372,Male,2024-05-20,593-66-1460,127.656426,71.506868
+238,C_238,I,A,USD,false,1,0,1000000,87920.89,,bank,Matthew,White,0587 Donna Skyway Suite 195,Port Brendaburgh,WY,US,41215,Male,2005-08-16,230-49-5534,156.549122,54.4364825
+239,C_239,I,A,USD,false,1,0,1000000,97856.09,,bank,Amanda,Abbott,9737 Knight Tunnel Suite 667,East Timothy,WI,US,25661,Female,1928-09-13,168-67-3471,-119.815070,-57.4083555
+240,C_240,I,A,USD,false,1,0,1000000,62714.10,,bank,Anthony,Rodriguez,026 David Wall,Williambury,TX,US,60411,Male,1971-02-12,107-72-1399,152.187853,-68.720267
+241,C_241,I,A,USD,false,1,0,1000000,50869.30,,bank,Marcia,Martin,7982 Huerta Hill,West Joshua,DC,US,96447,Female,2017-12-24,684-26-3910,-111.931854,76.5800265
+242,C_242,I,A,USD,false,1,0,1000000,58109.05,,bank,John,Rivera,41309 Gray Shores,Clarkland,VT,US,46825,Male,2008-07-29,674-05-1886,138.208672,71.4805235
+243,C_243,I,A,USD,false,1,0,1000000,82265.80,,bank,Andrew,Myers,780 Sanchez Forks,Kristinehaven,KY,US,99177,Male,1990-07-24,250-25-5176,-170.532140,77.6838885
+244,C_244,I,A,USD,false,1,0,1000000,60807.28,,bank,Anna,Shaw,35918 Nelson Flats,South Shannon,IN,US,77563,Female,1931-04-11,128-44-9571,-81.108794,-70.463388
+245,C_245,I,A,USD,true,1,0,1000000,97412.16,,bank,Bradley,Malone,3213 Kyle Tunnel Apt. 128,Stephensonview,VT,US,18155,Male,2005-01-30,518-32-3640,-109.441721,31.5192755
+246,C_246,I,A,USD,false,1,0,1000000,54609.91,,bank,Tammie,House,56820 Newman Ports Apt. 926,Jenniferside,ID,US,94439,Female,1936-06-15,512-82-0818,41.984405,72.324504
+247,C_247,I,A,USD,false,1,0,1000000,94740.11,,bank,Cassandra,Beck,85352 Mark Ways Suite 189,Blackburnport,OK,US,70916,Female,1965-05-08,716-92-3375,59.551875,-12.1203045
+248,C_248,I,A,USD,false,1,0,1000000,67699.34,,bank,William,Stokes,95410 Rachel Causeway Apt. 104,Jessicaland,GU,US,10999,Male,1980-12-05,806-81-5127,-0.870451,72.247150
+249,C_249,I,A,USD,false,1,0,1000000,96008.37,,bank,Kimberly,Kirk,89764 John Keys Suite 263,Browntown,KY,US,79820,Female,1927-10-19,013-93-6586,-41.641586,-23.4654495
+250,C_250,I,A,USD,false,1,0,1000000,66948.87,,bank,Raymond,Hunt,792 Mary Stream,Kennethfurt,NY,US,91811,Male,1935-09-25,271-05-5994,129.501282,-10.0631945
+251,C_251,I,A,USD,false,1,0,1000000,55552.58,,bank,Jeremy,Peterson,3234 Curtis Pine,Lucaschester,IL,US,71533,Male,1995-09-10,629-62-5077,135.507578,-61.7213215
+252,C_252,I,A,USD,false,1,0,1000000,83770.43,,bank,Matthew,Ashley,13865 Christopher Hill,Owenston,ME,US,71571,Male,1965-01-29,636-61-2085,176.786897,54.859142
+253,C_253,I,A,USD,false,1,0,1000000,64959.99,,bank,Leslie,Bryant,9339 Erica Haven,South Matthewchester,MI,US,19187,Female,1958-04-24,237-05-6123,67.639589,86.5664735
+254,C_254,I,A,USD,false,1,0,1000000,96994.72,,bank,Ashley,Harris,9240 Alexandria Green Apt. 171,Burgessburgh,ME,US,66469,Female,1952-04-23,887-23-6112,-1.383567,-27.9212105
+255,C_255,I,A,USD,false,1,0,1000000,91135.24,,bank,Darren,Castro,644 Adams Road,North Sarahshire,GU,US,17862,Male,1972-10-06,131-76-4721,175.454685,-43.719686
+256,C_256,I,A,USD,false,1,0,1000000,62815.15,,bank,Daniel,Murray,79483 Wilson Fords Apt. 224,Torresport,ID,US,45483,Male,2001-06-01,168-66-3647,51.098366,14.466458
+257,C_257,I,A,USD,false,1,0,1000000,74509.36,,bank,Natasha,Barrett,4726 Cole Stream,New Brent,OK,US,68931,Female,1977-01-31,049-53-9788,-86.496816,-82.543506
+258,C_258,I,A,USD,false,1,0,1000000,77518.95,,bank,Emily,Hayes,10450 Boone Cove Suite 653,East Misty,NV,US,50930,Female,2024-10-05,152-73-1598,-28.351413,31.500047
+259,C_259,I,A,USD,false,1,0,1000000,88645.63,,bank,Matthew,Hill,48385 Velazquez Isle,West Trevorville,FL,US,18373,Male,1924-12-10,246-21-5721,3.156372,44.5648855
+260,C_260,I,A,USD,false,1,0,1000000,63196.30,,bank,Kimberly,Park,083 Huff Extensions,Harrisonborough,GU,US,59145,Female,2019-03-08,124-67-7581,42.648528,76.728579
+261,C_261,I,A,USD,false,1,0,1000000,78307.88,,bank,Amanda,Bailey,1123 Ferguson Circle Suite 287,North John,ID,US,79181,Female,1966-01-03,808-43-9257,0.349978,-3.279565
+262,C_262,I,A,USD,false,1,0,1000000,75936.63,,bank,Kristin,Barrett,79595 Davis Summit Apt. 028,Leahbury,AK,US,10875,Female,1959-08-17,298-42-7819,-148.125854,-26.7149285
+263,C_263,I,A,USD,false,1,0,1000000,79400.07,,bank,Rebecca,Jacobson,5011 Lawrence Port Apt. 049,Nicolebury,SD,US,68132,Female,1935-02-11,212-18-7335,22.396962,-48.2931035
+264,C_264,I,A,USD,false,1,0,1000000,77774.29,,bank,Lauren,Wallace,5465 Crystal Brook Suite 251,East Allison,NJ,US,41266,Female,1993-03-15,553-19-8222,28.272109,-67.010758
+265,C_265,I,A,USD,false,1,0,1000000,71614.99,,bank,Martin,Strong,6858 Bradley Brooks,Cherylberg,IN,US,30596,Male,1982-02-05,885-77-8241,-85.992003,-50.822539
+266,C_266,I,A,USD,true,1,0,1000000,69356.71,,bank,Thomas,Miller,90391 Debra Fields,East Jeff,MT,US,69670,Male,1978-07-25,323-83-6361,-114.189569,47.133286
+267,C_267,I,A,USD,false,1,0,1000000,69754.65,,bank,Matthew,Doyle,44021 Benton Haven,South Diane,WV,US,25347,Male,1921-01-17,426-21-8159,136.684410,48.5868015
+268,C_268,I,A,USD,false,1,0,1000000,99718.96,,bank,Barbara,Harrell,10723 Duncan Corner,Lindaview,MA,US,56278,Female,1990-10-19,751-37-9051,-19.166474,21.546422
+269,C_269,I,A,USD,false,1,0,1000000,76114.57,,bank,Jessica,Lara,400 Cortez Crossing Apt. 343,Lake Aprilborough,NY,US,39206,Female,1963-11-03,739-62-9379,44.624920,-32.6236575
+270,C_270,I,A,USD,false,1,0,1000000,55324.40,,bank,Betty,Miller,352 Buchanan Bypass,Clayside,MA,US,28435,Female,1917-01-22,052-17-1094,105.022004,-60.489393
+271,C_271,I,A,USD,false,1,0,1000000,69682.54,,bank,Dennis,Roberts,26940 Garcia Rest,Port Jesustown,OK,US,57858,Male,1979-04-07,860-24-8365,141.328956,15.587146
+272,C_272,I,A,USD,false,1,0,1000000,88300.86,,bank,Kurt,Barnes,4773 Henson Rapids,Mcculloughport,NV,US,29230,Male,1958-09-15,206-16-5963,158.780225,84.840393
+273,C_273,I,A,USD,false,1,0,1000000,84108.70,,bank,Angel,Hardy,081 Jennifer Knolls,Lake Jamie,NE,US,14785,Male,1967-03-16,894-40-4477,29.023500,73.2794315
+274,C_274,I,A,USD,false,1,0,1000000,54037.86,,bank,Mary,Forbes,59587 Davila Flats,Brownhaven,MS,US,86708,Female,1979-10-31,584-33-9853,136.068095,-60.4076795
+275,C_275,I,A,USD,false,1,0,1000000,70662.17,,bank,Alexis,Lawson,89864 Destiny Common Suite 646,South Jamieport,WY,US,27114,Female,1969-12-12,100-53-5935,25.199914,8.204207
+276,C_276,I,A,USD,true,1,0,1000000,72594.18,,bank,Grant,Pham,50019 Rodriguez Junction Apt. 555,Dylanmouth,CO,US,33868,Male,2006-06-21,655-36-4616,-98.465882,20.758771
+277,C_277,I,A,USD,false,1,0,1000000,92267.67,,bank,David,Cook,134 Garrett Curve,Sarahview,AR,US,01733,Male,1986-08-16,120-89-7394,162.129395,-74.021138
+278,C_278,I,A,USD,false,1,0,1000000,63369.37,,bank,Sarah,Vargas,35114 Mcdonald Manor Suite 982,Port Davidfurt,KY,US,11757,Female,2009-09-23,878-67-2728,73.933994,21.341017
+279,C_279,I,A,USD,false,1,0,1000000,95809.49,,bank,Nicole,Collins,7118 Frederick Field Suite 402,Lake Stephaniemouth,LA,US,87177,Female,1983-01-10,842-43-2932,172.752883,-86.0130325
+280,C_280,I,A,USD,false,1,0,1000000,90688.65,,bank,Jill,Wong,77167 Austin Spring,Perezberg,OR,US,63172,Female,2025-04-21,715-54-8852,-13.771386,43.248567
+281,C_281,I,A,USD,false,1,0,1000000,50986.42,,bank,Charles,Pope,411 Sydney Gateway Suite 719,Masseytown,ND,US,23866,Male,1986-05-28,864-72-5423,-90.514799,0.0700455
+282,C_282,I,A,USD,false,1,0,1000000,74872.33,,bank,Kevin,Frederick,2152 Davis Station Apt. 501,Larryview,PW,US,23312,Male,2017-04-12,403-61-9126,-169.317949,-17.6558115
+283,C_283,I,A,USD,false,1,0,1000000,76635.70,,bank,Jeff,Evans,145 Roberts Common Suite 347,East Lindseyville,AK,US,44449,Male,1914-10-01,837-13-5050,71.590051,-7.519813
+284,C_284,I,A,USD,false,1,0,1000000,81549.77,,bank,David,Harrington,5466 Ray Orchard Suite 327,Dennisshire,HI,US,17435,Male,1942-11-06,109-41-1827,-177.699428,-37.154597
+285,C_285,I,A,USD,false,1,0,1000000,94377.05,,bank,Mike,Welch,95200 James Court,South Christopherborough,NY,US,47190,Male,1928-09-28,792-31-8233,118.243317,66.1310665
+286,C_286,I,A,USD,false,1,0,1000000,60086.01,,bank,Jason,Mckenzie,9881 Autumn Village,West Sherri,GA,US,80780,Male,1952-01-14,632-55-6835,-24.140088,-34.515889
+287,C_287,I,A,USD,false,1,0,1000000,91422.52,,bank,Michelle,Hodges,371 Gail Ramp Suite 805,Kimberlymouth,NJ,US,83584,Female,1942-12-25,589-68-1169,-147.208882,-71.926257
+288,C_288,I,A,USD,false,1,0,1000000,50446.69,,bank,Beverly,Hall,3119 Austin Mews,Christopherton,AK,US,97043,Female,1959-06-29,724-99-9710,146.822001,4.2918845
+289,C_289,I,A,USD,false,1,0,1000000,91657.32,,bank,Stephen,Wade,9183 Hutchinson Mount,Johnville,ME,US,64212,Male,1917-01-17,413-28-7075,63.496925,67.7345105
+290,C_290,I,A,USD,false,1,0,1000000,63089.79,,bank,Todd,Joseph,80838 Johnson Curve Apt. 813,South Nathan,CA,US,54125,Male,1926-11-21,239-61-6727,-19.414734,4.7631095
+291,C_291,I,A,USD,false,1,0,1000000,51310.66,,bank,Stephanie,Jacobs,6533 Robert Road Apt. 643,Port Bobby,TN,US,45122,Female,2018-06-25,036-38-3074,81.583337,-53.7765175
+292,C_292,I,A,USD,false,1,0,1000000,90644.82,,bank,Karen,Gilbert,283 Murray Manors,New David,HI,US,88940,Female,2004-06-22,732-03-9804,-158.523059,18.0097265
+293,C_293,I,A,USD,false,1,0,1000000,98547.08,,bank,Kari,Sawyer,963 Smith Lodge,West Stevenmouth,NJ,US,07616,Female,1925-12-15,710-79-5780,64.975314,-2.1750735
+294,C_294,I,A,USD,false,1,0,1000000,82883.81,,bank,Corey,Myers,90164 Darrell Freeway,Laurenside,MO,US,72261,Male,1918-06-03,497-03-7183,-74.127050,-89.533367
+295,C_295,I,A,USD,false,1,0,1000000,88906.52,,bank,Jenna,Hill,821 Avila Lock Suite 200,Port Coreyville,CA,US,27372,Female,1997-03-15,649-65-9585,75.846472,50.309449
+296,C_296,I,A,USD,false,1,0,1000000,69852.62,,bank,Thomas,Romero,154 Joseph Shoals Apt. 650,Knightburgh,IA,US,97256,Male,1979-05-06,169-36-7185,66.821800,-53.096282
+297,C_297,I,A,USD,false,1,0,1000000,62389.96,,bank,Michaela,Williams,132 Joseph Mountains,Debraberg,ID,US,46457,Female,1912-05-11,878-24-9409,-160.165616,27.702233
+298,C_298,I,A,USD,false,1,0,1000000,83226.93,,bank,Seth,Williams,164 Morales Lane Suite 538,Ebonyfort,PR,US,94809,Male,1942-07-10,366-21-9538,74.489812,-8.437564
+299,C_299,I,A,USD,false,1,0,1000000,90428.97,,bank,Marcus,Cooper,95585 Jennifer Well Apt. 408,West Jennifer,WA,US,27836,Male,2023-02-28,831-51-5646,110.580778,11.672365
+300,C_300,I,A,USD,false,1,0,1000000,63425.16,,bank,Katherine,Bruce,664 Deborah Squares Apt. 415,Pruittberg,MH,US,71133,Female,1939-11-25,168-16-4399,-5.351759,57.4963685
+301,C_301,I,A,USD,false,1,0,1000000,68775.10,,bank,Sonya,Adams,57193 Beck Greens,North Carolynstad,ND,US,74767,Female,1947-04-19,032-65-9965,-179.041143,65.0274325
+302,C_302,I,A,USD,false,1,0,1000000,63528.78,,bank,Ashley,Garcia,742 Johnson Forks Suite 114,West Lauraberg,NE,US,15582,Female,2001-01-18,206-69-6035,-137.964860,51.0388065
+303,C_303,I,A,USD,false,1,0,1000000,63240.07,,bank,Matthew,Leach,383 Flynn Common Apt. 973,New Michaeltown,OR,US,40588,Male,1912-04-10,665-90-7666,150.420232,79.870462
+304,C_304,I,A,USD,false,1,0,1000000,93312.38,,bank,Parker,Smith,362 Hodges Pass Apt. 713,Coxchester,KS,US,23522,Male,2010-04-07,665-63-4328,-158.251102,-70.8585935
+305,C_305,I,A,USD,false,1,0,1000000,50344.06,,bank,Kyle,Wilcox,8769 Deleon Flats,West Paulview,MI,US,69626,Male,1948-05-07,125-94-5847,-130.974692,-17.416993
+306,C_306,I,A,USD,false,1,0,1000000,51097.59,,bank,Megan,Hines,887 Todd Curve,Olsonstad,TX,US,80418,Female,1991-06-11,216-22-1073,-11.235672,11.6998645
+307,C_307,I,A,USD,false,1,0,1000000,59199.75,,bank,Chad,Meyer,95224 Brandi Vista Suite 195,New Danielle,MO,US,42493,Male,1980-08-21,540-14-6519,21.415866,-11.4917465
+308,C_308,I,A,USD,false,1,0,1000000,89237.68,,bank,Lauren,Hawkins,7127 Alexander Track Apt. 215,Port Maria,NC,US,24402,Female,1935-12-21,571-53-7698,160.508173,-41.7167295
+309,C_309,I,A,USD,false,1,0,1000000,78503.34,,bank,Margaret,Newman,47087 Riley Junction Suite 684,North Christopherborough,IL,US,36401,Female,2025-02-11,551-23-8902,37.518894,-28.777057
+310,C_310,I,A,USD,false,1,0,1000000,87866.65,,bank,Janet,Barnett,50246 Brown Skyway,Lindsayville,ME,US,19583,Female,1958-11-30,877-63-7689,-6.194788,62.4118565
+311,C_311,I,A,USD,false,1,0,1000000,84788.96,,bank,Shelley,Buchanan,3087 Kevin Shore Apt. 490,New Teresahaven,MA,US,47941,Female,1969-12-28,898-75-4592,-168.364921,-53.4396295
+312,C_312,I,A,USD,false,1,0,1000000,94410.52,,bank,Jessica,Sanders,519 Blanchard Key,New Adam,ND,US,45067,Female,1954-10-28,693-15-8629,-177.162985,28.612013
+313,C_313,I,A,USD,false,1,0,1000000,79334.43,,bank,Anthony,Lynch,1758 Escobar Courts,East Robertfurt,MI,US,04874,Male,1951-04-10,810-59-4764,150.614307,39.657095
+314,C_314,I,A,USD,false,1,0,1000000,51091.34,,bank,Victoria,Hays,1527 Jacqueline Turnpike Suite 453,West Johnhaven,DE,US,27483,Female,2008-08-03,175-04-6869,150.152672,10.066199
+315,C_315,I,A,USD,false,1,0,1000000,55115.38,,bank,Paula,Rodriguez,643 Cooper Rest,Nicholasshire,MT,US,94796,Female,2018-09-16,037-89-3417,83.348521,86.685022
+316,C_316,I,A,USD,false,1,0,1000000,70588.62,,bank,Tina,Harrison,2099 Martin Mountain Apt. 475,Melissachester,NC,US,08966,Female,1945-07-02,019-54-4811,146.741360,30.1527875
+317,C_317,I,A,USD,false,1,0,1000000,55921.02,,bank,Timothy,Williams,341 Taylor Crescent,West Sheila,VT,US,63077,Male,1974-04-18,615-24-6871,160.084927,-36.041996
+318,C_318,I,A,USD,false,1,0,1000000,65503.38,,bank,Matthew,Reese,55131 Williams Loaf Suite 328,West Laurieborough,UT,US,25317,Male,1970-06-21,842-83-2655,54.641171,80.0406375
+319,C_319,I,A,USD,false,1,0,1000000,63732.37,,bank,Taylor,Horton,07445 Robert Wells Apt. 903,East Christopherhaven,SD,US,52335,Male,1922-09-28,658-31-5173,-135.023692,78.1314315
+320,C_320,I,A,USD,false,1,0,1000000,99169.52,,bank,Jose,Wallace,789 Ryan Passage,New Jennifer,MH,US,36051,Male,1975-11-15,668-97-6699,-136.661515,2.512165
+321,C_321,I,A,USD,false,1,0,1000000,98232.41,,bank,Nicole,Brown,52135 Karen Plaza,New Jeffrey,CO,US,89041,Female,2012-08-28,329-64-6396,157.243035,18.4270595
+322,C_322,I,A,USD,false,1,0,1000000,83646.96,,bank,David,Carpenter,027 Amy Dale Suite 507,Carrstad,NH,US,61461,Male,2019-10-01,014-87-9471,-61.936023,55.9768645
+323,C_323,I,A,USD,false,1,0,1000000,71059.42,,bank,Rebecca,Brown,267 Nicole Spring,Veronicaville,AL,US,65144,Female,2013-08-16,710-83-0856,77.019372,-53.958369
+324,C_324,I,A,USD,false,1,0,1000000,70650.51,,bank,Richard,Blanchard,032 Jason Cliff,New Kimberly,ID,US,53066,Male,1992-02-29,827-85-7824,155.248734,-87.509217
+325,C_325,I,A,USD,false,1,0,1000000,53520.54,,bank,Eric,Finley,0727 Charles Mountain Apt. 561,Whiteside,WA,US,55941,Male,1958-02-01,274-84-8586,-115.367814,21.603880
+326,C_326,I,A,USD,false,1,0,1000000,72638.51,,bank,Dana,Strong,0874 Carroll Roads,Kellyfort,NY,US,66736,Female,1936-11-08,254-40-4155,51.317914,27.334819
+327,C_327,I,A,USD,false,1,0,1000000,57171.50,,bank,Alicia,Sharp,32973 Prince Parks,New Dominiquefort,VI,US,06316,Female,1921-11-15,865-30-9425,-138.560906,54.7222215
+328,C_328,I,A,USD,false,1,0,1000000,76606.68,,bank,Russell,Williams,423 Mccann Underpass Suite 442,Jeremychester,IL,US,32661,Male,2000-08-14,889-36-9654,13.297874,-30.2803635
+329,C_329,I,A,USD,false,1,0,1000000,90818.31,,bank,Kristi,Patterson,089 Trevor Plains,North Michael,MT,US,58206,Female,2015-03-12,804-93-4268,-29.861073,54.971646
+330,C_330,I,A,USD,false,1,0,1000000,70041.42,,bank,Jennifer,Sanchez,400 Robbins Lane Suite 977,Angelaberg,GA,US,02876,Female,1922-07-02,780-18-3290,-17.653630,-16.1243485
+331,C_331,I,A,USD,false,1,0,1000000,85315.81,,bank,Teresa,Brown,40823 Levy Isle Apt. 717,Jamesfurt,MT,US,06134,Female,1918-05-26,852-27-5359,-168.394599,-51.7849805
+332,C_332,I,A,USD,false,1,0,1000000,90723.76,,bank,Ivan,Robinson,680 Edward Forges Suite 101,North Patriciamouth,TN,US,09082,Male,1973-10-15,593-26-5066,-14.480206,-82.113502
+333,C_333,I,A,USD,false,1,0,1000000,95737.26,,bank,Andrea,Freeman,235 Bryan Wall Suite 586,North Reneetown,HI,US,72700,Female,2001-02-24,567-65-3916,-148.476597,-30.8194905
+334,C_334,I,A,USD,false,1,0,1000000,71349.13,,bank,Derek,Bennett,27371 Shelton Meadows,Wolfbury,IA,US,09278,Male,1955-09-05,185-37-4796,144.158692,-19.7113335
+335,C_335,I,A,USD,false,1,0,1000000,61854.15,,bank,Justin,Nelson,70165 Tyler Station,Shannonfort,AR,US,36527,Male,1930-04-05,616-72-4152,-44.527139,47.6788355
+336,C_336,I,A,USD,false,1,0,1000000,94481.53,,bank,David,Glover,6815 Christian Meadow,Westchester,VT,US,55275,Male,2014-08-17,783-70-8695,118.340017,74.5393985
+337,C_337,I,A,USD,false,1,0,1000000,74958.14,,bank,Danielle,Harris,2684 Heidi Trail,Erintown,AK,US,02204,Female,1934-03-12,044-28-9752,135.181073,-40.1432325
+338,C_338,I,A,USD,false,1,0,1000000,63648.50,,bank,Cassandra,Long,1726 Michael Fall Suite 500,Jasonshire,OH,US,99068,Female,1965-03-28,870-63-3328,-60.315513,8.6629195
+339,C_339,I,A,USD,false,1,0,1000000,84168.77,,bank,James,Lee,684 Potts Haven Suite 910,Port Josephhaven,SD,US,84716,Male,1986-03-31,059-49-9353,102.103846,86.3707665
+340,C_340,I,A,USD,false,1,0,1000000,93167.54,,bank,Sean,Davis,3585 Jenna Forges Suite 674,Candiceland,MH,US,02827,Male,2006-11-19,243-69-9451,-6.158332,-28.327464
+341,C_341,I,A,USD,false,1,0,1000000,99164.57,,bank,Cheryl,Rivera,50121 Sue Underpass Suite 762,Tylertown,ND,US,93530,Female,1978-08-11,670-31-2782,26.680319,45.091613
+342,C_342,I,A,USD,false,1,0,1000000,68830.99,,bank,Sara,Carter,68514 Clark Springs Suite 510,Bensontown,IA,US,10073,Female,1988-05-03,580-33-7098,-151.787093,-22.1778885
+343,C_343,I,A,USD,false,1,0,1000000,63245.92,,bank,Jonathan,Stone,963 Howe Drive,Jonesfurt,WA,US,16458,Male,1923-04-15,216-23-5125,-95.611526,70.731263
+344,C_344,I,A,USD,false,1,0,1000000,62509.27,,bank,Jasmine,Hardin,6038 Melissa Park Apt. 377,South Danielview,IL,US,77277,Female,1920-06-30,123-52-3404,-12.369710,-86.0129305
+345,C_345,I,A,USD,false,1,0,1000000,64915.58,,bank,Melissa,Jennings,060 Dale Square,South Paulaborough,RI,US,22114,Female,2004-11-22,084-84-6825,-7.815584,-11.951203
+346,C_346,I,A,USD,false,1,0,1000000,60877.02,,bank,Donna,Williams,813 Samantha Lodge Apt. 913,West Sharon,WA,US,57576,Female,1982-12-18,403-51-4595,-166.022618,18.0488795
+347,C_347,I,A,USD,false,1,0,1000000,95978.96,,bank,Laura,Donaldson,040 Sydney Plaza,South Cody,MP,US,12416,Female,1933-12-29,242-01-1187,-129.129655,86.807185
+348,C_348,I,A,USD,false,1,0,1000000,81711.15,,bank,Adrienne,Solis,5855 Ryan Light,Butlermouth,GU,US,20452,Female,1956-11-12,134-96-8031,-36.565069,88.180213
+349,C_349,I,A,USD,false,1,0,1000000,52508.62,,bank,Kristina,Fuller,565 White Trafficway,Port Nicholas,MS,US,77989,Female,2024-08-20,761-97-4910,-175.704500,-40.836734
+350,C_350,I,A,USD,false,1,0,1000000,54699.70,,bank,Sandra,Donovan,8596 Benton Keys Apt. 355,Port Olivia,MD,US,68083,Female,2019-08-09,384-33-9285,157.916208,-83.5630565
+351,C_351,I,A,USD,false,1,0,1000000,59257.71,,bank,Billy,Taylor,74418 Brooke Radial Apt. 183,East Annamouth,UT,US,13101,Male,1977-02-03,180-99-5732,-108.074399,-20.062764
+352,C_352,I,A,USD,false,1,0,1000000,98417.35,,bank,Frederick,Hoffman,80435 Patrick Islands Suite 092,Jerryport,DC,US,32937,Male,2010-05-24,110-64-5529,149.768419,-67.050443
+353,C_353,I,A,USD,false,1,0,1000000,67112.55,,bank,Laura,Garcia,04001 Green Island Suite 629,New Mariamouth,MI,US,40002,Female,1961-09-16,895-55-1844,54.729629,-61.8231705
+354,C_354,I,A,USD,false,1,0,1000000,90316.13,,bank,Kyle,Peterson,69296 Devin Path Apt. 335,Latashamouth,NM,US,66306,Male,1944-04-21,722-72-8188,135.133824,-84.6731535
+355,C_355,I,A,USD,false,1,0,1000000,61238.82,,bank,Michael,Hobbs,31348 Rebecca Mall Apt. 983,West Elizabethshire,MS,US,87638,Male,1962-01-22,015-35-2671,12.277706,43.4408345
+356,C_356,I,A,USD,false,1,0,1000000,59781.46,,bank,Jessica,Nichols,3227 Troy Ferry Apt. 540,West Lori,CA,US,83115,Female,1959-06-05,764-31-7332,165.229016,54.5038285
+357,C_357,I,A,USD,false,1,0,1000000,97117.27,,bank,Steven,Cooley,64991 Bell Corners Apt. 106,West Brittanyville,TX,US,21203,Male,1971-10-23,116-70-2216,4.403912,20.9436335
+358,C_358,I,A,USD,false,1,0,1000000,53774.07,,bank,Michael,Huber,54334 Smith Glen,New Sheritown,IL,US,24740,Male,1913-01-13,463-97-6652,57.578246,46.4940195
+359,C_359,I,A,USD,false,1,0,1000000,75039.56,,bank,William,Blackburn,877 Joseph Meadow Apt. 115,South Heatherchester,ID,US,45505,Male,1915-02-16,515-18-5011,-22.062263,64.055777
+360,C_360,I,A,USD,false,1,0,1000000,76466.74,,bank,Scott,Thompson,02845 Morrison Lodge,East Martin,AS,US,83823,Male,2010-11-29,278-19-4478,-60.075878,47.767885
+361,C_361,I,A,USD,false,1,0,1000000,66879.36,,bank,Christopher,Coleman,167 Russell Loop Apt. 034,East Brandiberg,HI,US,49979,Male,2025-12-31,638-68-0660,-84.082929,-85.3693545
+362,C_362,I,A,USD,false,1,0,1000000,87807.31,,bank,John,Khan,805 Samantha Islands,New Amber,NV,US,63978,Male,1976-10-11,644-73-7177,122.805614,64.969601
+363,C_363,I,A,USD,false,1,0,1000000,92712.39,,bank,Frank,Kim,809 Brian Rapids,Conradfort,IL,US,03668,Male,1978-08-27,803-64-9587,-131.387668,63.379470
+364,C_364,I,A,USD,false,1,0,1000000,61464.36,,bank,Crystal,James,43026 Heather Landing Apt. 267,Garciaport,AR,US,36187,Female,2016-07-23,177-42-3597,93.566363,-73.561865
+365,C_365,I,A,USD,false,1,0,1000000,65083.53,,bank,Cassandra,Kim,31527 Jennifer Trail Apt. 785,Pearsonburgh,PR,US,69427,Female,1991-05-23,136-55-4893,91.005682,-73.474894
+366,C_366,I,A,USD,false,1,0,1000000,74313.11,,bank,Andrea,Kim,71269 Jeffrey Lodge,Evansport,NC,US,16416,Female,1990-08-12,834-49-3116,-104.582614,4.111668
+367,C_367,I,A,USD,false,1,0,1000000,73982.09,,bank,Kevin,Lane,19691 Rose Plaza Apt. 911,North Heather,VA,US,80448,Male,2005-11-15,414-41-9617,29.496849,86.547945
+368,C_368,I,A,USD,false,1,0,1000000,81618.57,,bank,Samantha,Huang,7040 Campbell Fall Suite 381,Lake Suzanne,NV,US,55004,Female,1969-05-05,175-13-3019,28.294373,57.3924375
+369,C_369,I,A,USD,false,1,0,1000000,88716.91,,bank,Russell,Dunn,7331 Anderson Track,South Joshuaport,NC,US,73985,Male,2011-10-12,483-51-4167,115.621318,0.316914
+370,C_370,I,A,USD,false,1,0,1000000,66958.81,,bank,Steven,Torres,917 David Lakes,South Hollyfurt,HI,US,40937,Male,2007-05-11,535-40-8525,-98.853185,37.855237
+371,C_371,I,A,USD,false,1,0,1000000,97028.34,,bank,Timothy,Smith,034 Hickman Stream Suite 294,West Brianburgh,NE,US,45433,Male,1927-04-24,685-47-5778,49.403339,-83.198872
+372,C_372,I,A,USD,false,1,0,1000000,72816.35,,bank,Kristin,Trevino,959 Thomas Coves,Andersonmouth,MS,US,63682,Female,1996-11-21,669-63-3481,46.971072,-5.220870
+373,C_373,I,A,USD,false,1,0,1000000,51426.43,,bank,Patricia,Johnson,94531 David Radial Suite 075,Markfort,CT,US,00758,Female,1985-02-18,432-88-9476,-55.415939,14.076934
+374,C_374,I,A,USD,false,1,0,1000000,71094.67,,bank,Heather,Morrison,149 Marilyn Viaduct,Jenniferstad,MO,US,24586,Female,1977-11-01,127-95-9184,48.356533,-0.697955
+375,C_375,I,A,USD,false,1,0,1000000,76491.18,,bank,Rebecca,Brown,273 Corey Squares,North Emily,HI,US,47191,Female,1945-08-08,166-11-8801,-4.598660,38.947257
+376,C_376,I,A,USD,false,1,0,1000000,59148.92,,bank,Morgan,Smith,05116 Durham Vista Suite 954,East Cynthiaborough,TN,US,87157,Female,1983-03-17,507-85-0085,91.054687,-82.586490
+377,C_377,I,A,USD,false,1,0,1000000,93980.13,,bank,Andrea,Camacho,57781 Moore Plaza,Lopezstad,NH,US,21876,Female,2004-06-17,029-60-6303,154.283869,-69.000918
+378,C_378,I,A,USD,true,1,0,1000000,79829.40,,bank,Lisa,Garcia,729 David Meadows,Matthewstad,MT,US,65656,Female,1932-07-29,891-23-7504,-174.263305,42.6058335
+379,C_379,I,A,USD,false,1,0,1000000,76004.63,,bank,Mary,Hammond,026 David Place,Lake John,AK,US,15559,Female,2015-06-15,789-84-5359,-77.359663,7.9413295
+380,C_380,I,A,USD,false,1,0,1000000,64224.09,,bank,Timothy,May,3908 Garcia Curve,Makaylaberg,NY,US,23953,Male,1950-07-04,046-89-2807,-30.381875,3.2296985
+381,C_381,I,A,USD,false,1,0,1000000,56648.97,,bank,Maria,Allen,074 Erin Fields Apt. 747,North Mitchellbury,VI,US,80334,Female,1932-08-28,797-50-1575,-85.238096,-21.5076395
+382,C_382,I,A,USD,false,1,0,1000000,63788.60,,bank,Gregory,Ruiz,82976 Perry Fort Apt. 165,Samanthachester,WV,US,54459,Male,1939-01-23,120-37-5251,101.088591,-75.604599
+383,C_383,I,A,USD,false,1,0,1000000,82070.60,,bank,Sally,Dixon,43416 Hill Tunnel,East Keithside,AK,US,09785,Female,1941-01-23,158-29-3337,-52.302963,-13.179360
+384,C_384,I,A,USD,false,1,0,1000000,84140.96,,bank,Brandy,Schneider,71072 Wiggins Union,Sampsonmouth,FM,US,61388,Female,1911-01-28,783-26-7132,-63.276590,85.4497465
+385,C_385,I,A,USD,false,1,0,1000000,84171.03,,bank,Melanie,Flowers,194 Gregory Squares Apt. 631,Brownmouth,MA,US,40900,Female,1982-03-30,248-81-1484,-22.384108,-80.414954
+386,C_386,I,A,USD,false,1,0,1000000,51598.11,,bank,Jennifer,Sherman,965 Thomas Ville Apt. 679,Port Danielburgh,NJ,US,91680,Female,1935-07-11,425-40-2796,-134.072816,-63.332510
+387,C_387,I,A,USD,false,1,0,1000000,88899.02,,bank,Lori,Smith,2262 Holly Loaf,East Frank,MN,US,75086,Female,1991-09-22,395-04-6687,-35.999438,-21.815419
+388,C_388,I,A,USD,false,1,0,1000000,84746.54,,bank,Mary,Lang,38619 William River Suite 060,Jenkinsville,MI,US,28596,Female,1967-07-29,855-23-0586,-143.093401,-39.4349255
+389,C_389,I,A,USD,false,1,0,1000000,84095.91,,bank,Tamara,Carter,732 Woods Groves Suite 618,Watsonville,CT,US,19563,Female,1935-10-01,812-76-3154,-70.053005,43.9574035
+390,C_390,I,A,USD,false,1,0,1000000,76142.68,,bank,David,Newman,46488 Jonathan Neck,Lake Tina,TX,US,64281,Male,1918-12-07,493-52-3000,71.619086,-81.5286285
+391,C_391,I,A,USD,false,1,0,1000000,92685.93,,bank,Michael,Cruz,98360 Thomas Viaduct,New Kimberly,UT,US,67509,Male,1996-01-21,362-68-8013,-135.680128,-80.5151765
+392,C_392,I,A,USD,false,1,0,1000000,98123.88,,bank,Kevin,Jones,38724 Brenda Squares,Lake Markview,DC,US,85606,Male,1946-06-17,389-68-7626,128.226441,74.506417
+393,C_393,I,A,USD,false,1,0,1000000,79168.79,,bank,Deborah,Manning,75301 Black Field,Paulamouth,PW,US,45275,Female,1999-09-19,082-56-9086,-42.861544,-38.448620
+394,C_394,I,A,USD,false,1,0,1000000,71614.24,,bank,Mark,Robinson,57574 Walton Mills,Michaelbury,MI,US,02778,Male,1950-12-05,176-94-3152,-136.980474,14.5126115
+395,C_395,I,A,USD,false,1,0,1000000,77070.42,,bank,Shirley,Peterson,526 Ashley Ville Apt. 107,East Vincentbury,VT,US,61067,Female,2013-07-20,835-46-7121,116.560586,2.6196735
+396,C_396,I,A,USD,false,1,0,1000000,90056.04,,bank,Natasha,Romero,44203 Kaufman Spring,Taylorburgh,FM,US,16635,Female,1988-09-17,589-65-1427,-97.199681,13.4816075
+397,C_397,I,A,USD,false,1,0,1000000,83846.29,,bank,Steven,Goodwin,9461 James Point,Richardberg,VT,US,68146,Male,1953-08-13,629-54-8579,49.839768,-20.0847535
+398,C_398,I,A,USD,true,1,0,1000000,88806.66,,bank,Keith,Mcclain,906 Justin Motorway Suite 321,Port Leah,DC,US,34361,Male,1965-04-18,195-35-5067,-68.231735,-29.234376
+399,C_399,I,A,USD,false,1,0,1000000,65455.68,,bank,Maurice,Davis,94497 Pierce Manor,Davidberg,MI,US,12869,Male,1941-05-19,444-77-8021,-159.641793,81.483428
+400,C_400,I,A,USD,false,1,0,1000000,80099.81,,bank,Scott,Duncan,7670 Diaz Crossing,Nguyenport,WV,US,81432,Male,2022-10-10,065-25-5511,-40.874610,-87.8773955
+401,C_401,I,A,USD,false,1,0,1000000,61798.26,,bank,Ryan,Russell,5827 Tiffany Route Suite 355,Christopherside,CO,US,66189,Male,1939-08-01,139-31-3043,-129.019439,-27.604064
+402,C_402,I,A,USD,false,1,0,1000000,78858.18,,bank,Jennifer,Harper,81649 Chan Circles Suite 182,Lake Timothybury,HI,US,56719,Female,1955-04-29,447-63-1357,-106.448096,-13.9217045
+403,C_403,I,A,USD,false,1,0,1000000,50746.96,,bank,Brian,Mckinney,7479 Arnold Underpass,Georgetown,GU,US,57741,Male,1929-07-13,703-03-8130,74.343461,54.134376
+404,C_404,I,A,USD,false,1,0,1000000,76686.51,,bank,Lisa,Kim,8997 Newman Forges Apt. 895,Port Reneemouth,MD,US,18331,Female,1993-10-01,683-11-2061,73.397836,-50.6465855
+405,C_405,I,A,USD,false,1,0,1000000,86372.31,,bank,Nicholas,Mitchell,7085 Williams Pass Suite 949,New Devinview,TN,US,19299,Male,1961-04-26,509-39-0217,84.949080,-57.3615995
+406,C_406,I,A,USD,false,1,0,1000000,95539.42,,bank,Richard,Gilbert,36036 Chris Forest,Tiffanyhaven,PA,US,71818,Male,1957-03-29,698-19-1350,170.016672,-58.0172085
+407,C_407,I,A,USD,false,1,0,1000000,74255.63,,bank,Bruce,Li,03818 Madison Lake Suite 303,Dustinville,FL,US,47013,Male,1913-08-25,012-83-9813,-137.610214,-16.467437
+408,C_408,I,A,USD,false,1,0,1000000,93631.63,,bank,Charles,Roberts,9752 Garcia Ridges Apt. 382,Port Michelle,TX,US,38869,Male,1995-09-15,061-25-3501,-86.897754,12.437874
+409,C_409,I,A,USD,false,1,0,1000000,60010.76,,bank,Jacqueline,Sanford,8302 Nicole Springs Suite 097,South Danielside,SC,US,06260,Female,1924-04-14,572-60-2138,-99.724998,56.8921355
+410,C_410,I,A,USD,false,1,0,1000000,50584.83,,bank,Jennifer,Thomas,095 Larson Field Suite 586,Clarkstad,PA,US,52882,Female,1935-10-04,201-40-0227,-147.677185,25.222014
+411,C_411,I,A,USD,true,1,0,1000000,77653.80,,bank,John,Owen,50493 Melanie Corners Suite 801,East Larryville,NE,US,30931,Male,2002-06-07,533-81-4952,152.200910,66.4458455
+412,C_412,I,A,USD,false,1,0,1000000,67180.65,,bank,Jade,Myers,3085 Downs Crescent,New Dawnmouth,CT,US,66201,Female,1939-10-07,851-49-3263,122.922793,-87.7323625
+413,C_413,I,A,USD,false,1,0,1000000,69769.35,,bank,Caroline,Guzman,4849 Paul Street Apt. 905,Carterville,NV,US,72021,Female,1971-11-05,167-45-5532,-166.936516,42.938258
+414,C_414,I,A,USD,false,1,0,1000000,79945.03,,bank,Steven,Fox,293 Wong Drive,Johnsonfurt,GA,US,28697,Male,2002-04-12,060-71-9501,-166.684802,-44.5064305
+415,C_415,I,A,USD,false,1,0,1000000,87786.83,,bank,Sydney,Joseph,8871 Angel Rest Suite 028,Harperhaven,MD,US,42359,Female,1986-06-27,351-88-4451,143.185759,8.770787
+416,C_416,I,A,USD,false,1,0,1000000,93115.74,,bank,Thomas,Turner,605 Stanley Court,East Danielle,OH,US,95886,Male,1975-06-12,557-23-0600,-55.537624,-13.1019855
+417,C_417,I,A,USD,false,1,0,1000000,66183.75,,bank,Megan,Perkins,72681 Carlos Passage Apt. 146,New Alice,MD,US,16823,Female,1929-03-17,016-17-2507,-79.998630,-11.5187695
+418,C_418,I,A,USD,false,1,0,1000000,79119.13,,bank,Jose,Carter,255 Hunt Ramp,Port Dawn,OK,US,42058,Male,1926-12-30,686-59-1924,-85.065895,-20.7258655
+419,C_419,I,A,USD,false,1,0,1000000,81492.64,,bank,Gregory,Beasley,574 Bradley Loaf,West Jacobland,PA,US,32543,Male,1940-09-17,345-22-9546,165.814268,69.1323375
+420,C_420,I,A,USD,false,1,0,1000000,84260.26,,bank,Nicholas,Weaver,819 Raymond Gateway,Elizabethland,RI,US,68064,Male,1979-05-18,608-50-3758,70.555540,-78.002854
+421,C_421,I,A,USD,false,1,0,1000000,79198.02,,bank,Matthew,Freeman,79514 Emma Club,Lake Jaime,ND,US,05737,Male,1923-10-30,206-26-7440,-48.463889,64.778559
+422,C_422,I,A,USD,false,1,0,1000000,73260.84,,bank,Julia,Glenn,332 Christian Estate,Wilsonside,WY,US,40742,Female,2002-01-30,172-33-4253,167.344528,76.700337
+423,C_423,I,A,USD,false,1,0,1000000,90470.29,,bank,Kristen,Vasquez,22007 Trevor Shoal Apt. 155,Lopezview,ID,US,21238,Female,1964-03-09,587-60-4850,-162.872765,16.0518755
+424,C_424,I,A,USD,false,1,0,1000000,50995.49,,bank,Logan,Snyder,31326 Martinez Ranch Suite 498,Cynthiashire,VA,US,85099,Male,1995-01-07,752-74-2842,-57.271506,37.6265575
+425,C_425,I,A,USD,true,1,0,1000000,89307.77,,bank,David,Thompson,838 Christian Lodge,East Mark,MI,US,57218,Male,2015-11-15,846-73-9951,46.577061,-65.063931
+426,C_426,I,A,USD,false,1,0,1000000,58354.73,,bank,Danielle,Smith,85409 Pham Heights,Juliefort,HI,US,81487,Female,1983-05-28,571-79-8820,50.497349,-74.5899115
+427,C_427,I,A,USD,false,1,0,1000000,59110.25,,bank,Maria,Cox,07663 Joseph Land Apt. 645,Charlesburgh,VA,US,10178,Female,1970-11-18,701-49-0737,-123.314948,-31.4714405
+428,C_428,I,A,USD,false,1,0,1000000,83588.43,,bank,Tiffany,Marshall,31733 White Lane Apt. 901,Chandlershire,OK,US,91542,Female,2013-10-27,265-61-8326,-36.111145,50.9066805
+429,C_429,I,A,USD,false,1,0,1000000,72737.57,,bank,Victor,Li,681 Jessica Path Apt. 658,North Carl,MS,US,99891,Male,2006-09-01,894-79-4882,167.644103,-42.5219715
+430,C_430,I,A,USD,false,1,0,1000000,67116.89,,bank,Manuel,Bartlett,224 Mark Lock,Martinburgh,NE,US,09252,Male,1971-11-14,486-73-5578,98.496821,-46.585965
+431,C_431,I,A,USD,true,1,0,1000000,53911.88,,bank,Debbie,Castillo,30537 Terry Fields Apt. 343,Port Lisa,ND,US,00793,Female,1979-03-17,336-66-3230,-168.618253,45.9986245
+432,C_432,I,A,USD,false,1,0,1000000,52568.15,,bank,Francisco,Wright,1460 Kane Extension Apt. 325,Hallfurt,WI,US,56745,Male,1943-03-12,381-21-0461,-145.519854,15.4076945
+433,C_433,I,A,USD,false,1,0,1000000,63386.58,,bank,Shannon,Patterson,9125 Michael Row,South Elizabeth,IA,US,65991,Female,1916-11-13,722-65-1003,19.697620,-63.151672
+434,C_434,I,A,USD,false,1,0,1000000,54818.58,,bank,Ariana,Henderson,047 Clark Landing,Costaside,AS,US,50535,Female,1987-05-28,843-30-2392,121.814195,12.573472
+435,C_435,I,A,USD,false,1,0,1000000,84826.89,,bank,Ryan,Smith,06431 Ashley Glens Apt. 765,New Patrick,AZ,US,56860,Male,1995-12-06,517-78-0162,-151.247434,-87.5676025
+436,C_436,I,A,USD,false,1,0,1000000,60044.73,,bank,Heather,Smith,41369 Kevin Land,Hoodshire,TN,US,84202,Female,1913-06-12,620-99-4399,131.600487,-14.1135405
+437,C_437,I,A,USD,false,1,0,1000000,69033.45,,bank,Henry,Dunn,6649 Johnson Union,Kendramouth,MA,US,61000,Male,1960-06-18,777-92-8016,6.588061,-10.7126215
+438,C_438,I,A,USD,false,1,0,1000000,71055.13,,bank,Kimberly,King,60072 Amanda Mission Suite 962,Changland,NC,US,02985,Female,1968-11-17,166-55-5381,-46.473939,-67.0710545
+439,C_439,I,A,USD,false,1,0,1000000,85232.98,,bank,Jeffery,Simmons,505 Chandler Prairie,Lake Jacqueline,MT,US,72709,Male,1931-08-26,079-55-5324,131.295710,22.6048395
+440,C_440,I,A,USD,false,1,0,1000000,90821.15,,bank,Janet,Proctor,6876 Shannon Islands Suite 298,Port Destiny,HI,US,10318,Female,2018-09-14,210-40-6370,-97.527562,-45.978709
+441,C_441,I,A,USD,false,1,0,1000000,81585.99,,bank,Whitney,Wheeler,31145 Thompson Common,Berrychester,MO,US,49713,Female,1981-05-16,108-24-3727,82.258584,27.289685
+442,C_442,I,A,USD,false,1,0,1000000,60862.61,,bank,Andrew,Horn,68721 Kim Manors Suite 248,Osborntown,LA,US,68217,Male,1939-06-15,062-92-7661,113.465982,-65.764225
+443,C_443,I,A,USD,false,1,0,1000000,56871.84,,bank,Cody,Edwards,89233 Flores Green Apt. 398,Cameronbury,PA,US,42301,Male,1940-03-24,308-90-5263,-131.865612,52.6258045
+444,C_444,I,A,USD,false,1,0,1000000,77971.10,,bank,Joseph,Reed,771 Waters Causeway Apt. 262,North Johnchester,SC,US,97273,Male,1995-05-01,621-68-8773,123.431117,44.7145115
+445,C_445,I,A,USD,false,1,0,1000000,68309.70,,bank,Mark,Meyer,0936 White Meadow,Johnsonmouth,NM,US,12421,Male,1950-11-21,717-21-5441,-1.845264,34.5628095
+446,C_446,I,A,USD,false,1,0,1000000,86243.27,,bank,Kevin,Smith,2065 Jessica Shore Suite 872,East Lindsayville,AS,US,46533,Male,1913-02-10,513-91-8711,16.908322,46.1322235
+447,C_447,I,A,USD,false,1,0,1000000,60800.43,,bank,Lisa,Sutton,142 Hernandez Forks,Gregoryhaven,UT,US,40294,Female,2000-10-25,439-15-3762,-94.452820,3.595743
+448,C_448,I,A,USD,false,1,0,1000000,84530.45,,bank,Kyle,Craig,75874 Roberts Brooks,North Toddshire,LA,US,57406,Male,2022-03-04,648-29-6581,-26.496897,26.1771855
+449,C_449,I,A,USD,false,1,0,1000000,67912.23,,bank,Pam,Morgan,77253 Wilkinson Islands Suite 544,Foxfort,RI,US,90841,Female,2012-02-10,883-94-0268,-170.419381,-6.3550335
+450,C_450,I,A,USD,false,1,0,1000000,64008.38,,bank,Tina,Richardson,98221 Black Loop,Michaelfort,NH,US,40295,Female,1958-04-05,041-65-5335,-63.239880,56.9349345
+451,C_451,I,A,USD,false,1,0,1000000,59034.57,,bank,Kimberly,Smith,6264 Derrick Drive,South Christy,PR,US,96110,Female,1998-04-29,281-61-6695,165.408371,-12.7292285
+452,C_452,I,A,USD,false,1,0,1000000,87718.94,,bank,Christine,Martinez,055 Rojas Villages,North Leeton,TX,US,08107,Female,1956-11-13,277-80-9166,-101.534713,19.3854545
+453,C_453,I,A,USD,false,1,0,1000000,75202.63,,bank,William,Howe,70255 Rivera Spurs,Navarromouth,UT,US,67255,Male,1973-12-30,535-25-3874,26.357775,-43.8915865
+454,C_454,I,A,USD,false,1,0,1000000,77194.59,,bank,Katherine,Anderson,96473 Robert Mills,South Jasonchester,VA,US,03141,Female,2012-02-17,081-10-1137,11.145420,-71.1998925
+455,C_455,I,A,USD,false,1,0,1000000,91618.21,,bank,Timothy,King,82427 Jamie Forks,Catherinestad,VT,US,10280,Male,1983-02-22,516-64-1837,-114.801499,-56.523387
+456,C_456,I,A,USD,false,1,0,1000000,51346.60,,bank,Courtney,King,247 Clark Park Suite 602,Angelaview,PR,US,13749,Female,1982-02-05,313-23-3210,12.151466,-14.3746195
+457,C_457,I,A,USD,false,1,0,1000000,77259.97,,bank,Joseph,Vasquez,300 Henry Centers Apt. 685,Finleyburgh,CO,US,27075,Male,1930-06-17,553-15-1633,54.906276,-51.4878515
+458,C_458,I,A,USD,false,1,0,1000000,66432.01,,bank,Crystal,Brown,44379 Campbell Viaduct,South Katherinehaven,WV,US,64842,Female,1986-06-30,096-74-8089,90.976694,0.206663
+459,C_459,I,A,USD,false,1,0,1000000,62188.75,,bank,Paula,Bell,55387 Rivera Drive,New Matthew,MH,US,49920,Female,1959-10-26,375-82-6080,-0.094027,-89.578707
+460,C_460,I,A,USD,false,1,0,1000000,91422.84,,bank,Jennifer,Simmons,868 John Spurs Suite 319,South Stevenview,MO,US,34943,Female,1920-12-02,543-06-4335,-38.230720,-64.976341
+461,C_461,I,A,USD,false,1,0,1000000,62142.55,,bank,Megan,Copeland,758 Castro Meadows Apt. 171,Tylerburgh,MD,US,38987,Female,1982-07-12,790-78-3125,-57.908522,68.9958565
+462,C_462,I,A,USD,false,1,0,1000000,70471.34,,bank,Angela,Wilkins,01911 Travis Terrace,Heidiberg,MT,US,17488,Female,1982-09-11,714-39-4235,152.306365,67.9120285
+463,C_463,I,A,USD,false,1,0,1000000,71693.95,,bank,Julia,Harris,91614 Amy Lodge,East Kayla,CT,US,83641,Female,1981-02-26,574-82-1161,143.465170,16.275665
+464,C_464,I,A,USD,false,1,0,1000000,56903.52,,bank,Molly,Henson,8160 Stephanie Road,Lake Jenniferfurt,FM,US,65595,Female,1974-05-24,598-20-3283,-129.883119,73.6349535
+465,C_465,I,A,USD,false,1,0,1000000,65499.48,,bank,Michelle,Owens,561 Cox Estate Apt. 049,Davidside,IA,US,13623,Female,1964-10-03,504-30-0068,113.177089,-24.164124
+466,C_466,I,A,USD,false,1,0,1000000,50187.16,,bank,Bruce,Mason,6132 Richards Lodge,Johnsontown,HI,US,70216,Male,1963-01-05,326-57-4209,-168.337666,-29.541056
+467,C_467,I,A,USD,false,1,0,1000000,75017.27,,bank,Chris,Wise,9487 Ryan Skyway Suite 695,Lake Curtis,IN,US,61618,Male,1938-02-13,432-72-3492,42.992050,-72.660244
+468,C_468,I,A,USD,false,1,0,1000000,81399.56,,bank,Sarah,Underwood,08483 Kelly Ramp,Sandratown,LA,US,88768,Female,1999-03-08,751-40-7124,122.532108,-19.533428
+469,C_469,I,A,USD,false,1,0,1000000,99984.79,,bank,Alyssa,Rodriguez,2706 Rodriguez Isle,South Kevinside,PA,US,84909,Female,1963-07-08,823-25-2100,-13.768942,47.538331
+470,C_470,I,A,USD,false,1,0,1000000,97964.71,,bank,Marcus,Payne,8409 Wright Prairie Apt. 862,Chandlermouth,VA,US,48282,Male,2009-05-14,371-96-5898,132.920961,7.8170385
+471,C_471,I,A,USD,false,1,0,1000000,66599.55,,bank,Janet,Foster,919 Karen Lock,South Annehaven,FM,US,57698,Female,1977-07-30,677-60-0344,122.278750,34.289924
+472,C_472,I,A,USD,false,1,0,1000000,98161.61,,bank,Cynthia,Alexander,0975 William Avenue Suite 918,Johnsonside,OH,US,29180,Female,1916-05-14,051-34-6208,41.673855,18.725705
+473,C_473,I,A,USD,false,1,0,1000000,55211.39,,bank,Michelle,Hebert,0327 Olson Shores,South Matthew,IL,US,98394,Female,1982-01-27,745-58-3759,-125.847026,0.0183965
+474,C_474,I,A,USD,false,1,0,1000000,57435.41,,bank,Scott,West,4850 Joel Mews,Webermouth,AZ,US,50829,Male,1917-11-28,875-42-6716,-106.765315,-41.7812245
+475,C_475,I,A,USD,false,1,0,1000000,76499.45,,bank,Chelsea,Murphy,3164 Aguirre Roads Apt. 310,Melaniemouth,PW,US,78893,Female,2007-09-15,272-17-2418,174.259840,66.9017895
+476,C_476,I,A,USD,false,1,0,1000000,84133.82,,bank,Kevin,Cummings,40494 Brandy Corner,Jenkinsfort,MH,US,48714,Male,1991-09-12,603-21-9394,-14.945702,65.4287085
+477,C_477,I,A,USD,false,1,0,1000000,79694.51,,bank,Heather,Ryan,86836 Stephanie Wells,New Jean,OK,US,58562,Female,2004-07-21,588-82-4978,-87.942480,81.3013645
+478,C_478,I,A,USD,false,1,0,1000000,51816.71,,bank,Ashley,Cruz,996 Patton Streets,Kathymouth,MI,US,75344,Female,1933-01-12,818-97-6027,-176.998832,64.7225475
+479,C_479,I,A,USD,false,1,0,1000000,70392.90,,bank,Sheila,Ortiz,352 Davis Locks,Mercadofurt,PR,US,65560,Female,1979-08-21,890-36-0660,-84.921993,62.6661835
+480,C_480,I,A,USD,true,1,0,1000000,74621.03,,bank,Phillip,Johnson,693 Randall Parks,East Tracystad,CA,US,42845,Male,2005-12-24,300-92-0663,50.988785,-19.4766915
+481,C_481,I,A,USD,false,1,0,1000000,69322.93,,bank,Heather,Johnson,1880 Davis Square,Millsborough,MP,US,86996,Female,1984-12-17,515-93-7305,101.312717,47.280887
+482,C_482,I,A,USD,false,1,0,1000000,88058.07,,bank,Renee,Casey,03044 Murray Loop Suite 167,Terrenceborough,AL,US,74631,Female,1957-02-18,550-27-7013,-145.019028,-6.023011
+483,C_483,I,A,USD,false,1,0,1000000,87212.08,,bank,Matthew,Ruiz,067 Laura Branch Apt. 889,New Jason,LA,US,67157,Male,2023-02-07,197-97-8291,116.618427,-28.645524
+484,C_484,I,A,USD,false,1,0,1000000,54321.72,,bank,James,Webb,785 Pena Crossroad,West Veronicaside,KS,US,38228,Male,2003-09-09,618-92-6929,16.647560,61.5585625
+485,C_485,I,A,USD,false,1,0,1000000,73264.33,,bank,Darrell,Anderson,694 Rebecca Cape,Jessicahaven,CT,US,09516,Male,1954-09-05,384-60-4279,6.376555,-54.143466
+486,C_486,I,A,USD,false,1,0,1000000,84837.31,,bank,Richard,Nelson,09468 Benjamin Path Suite 680,West Nancy,MS,US,50854,Male,2014-02-05,760-63-5281,-18.998680,64.8916215
+487,C_487,I,A,USD,false,1,0,1000000,89413.91,,bank,Sarah,Taylor,42016 Kimberly Expressway,Wilsonport,ID,US,35803,Female,1951-09-07,557-17-3786,129.944103,-74.0381175
+488,C_488,I,A,USD,false,1,0,1000000,83152.02,,bank,Brett,Williams,0497 Stewart Walks,Alvarezville,ME,US,81474,Male,1989-06-06,120-69-1016,-154.174565,63.441059
+489,C_489,I,A,USD,false,1,0,1000000,98870.65,,bank,Christina,Glenn,7857 Alexander Islands Apt. 660,Lake Kristen,RI,US,76794,Female,1973-05-05,261-25-7905,12.819724,3.6820535
+490,C_490,I,A,USD,false,1,0,1000000,86996.75,,bank,Darrell,Bishop,2881 Harrison Ports Apt. 496,North Theresa,OK,US,85346,Male,2003-06-15,232-75-4168,-170.134093,-8.5070395
+491,C_491,I,A,USD,false,1,0,1000000,69677.39,,bank,Anthony,Mcintosh,0346 Jennifer Cliff Suite 027,Aaronside,UT,US,11184,Male,1941-11-14,393-57-6237,111.772589,27.897811
+492,C_492,I,A,USD,false,1,0,1000000,91750.20,,bank,Amber,Vance,99653 Ward Turnpike,Ashleyhaven,VA,US,24121,Female,1936-01-18,216-62-5272,123.267693,39.6714805
+493,C_493,I,A,USD,false,1,0,1000000,80616.66,,bank,Susan,Nelson,975 Salazar Shoals Suite 795,North Annaview,OK,US,96333,Female,1918-11-25,204-83-5422,-83.854039,-31.807388
+494,C_494,I,A,USD,false,1,0,1000000,79872.24,,bank,Alison,Moore,3814 Bowen Bypass Suite 228,Fieldsbury,UT,US,54704,Female,2024-10-12,116-03-9037,-30.157938,11.2937935
+495,C_495,I,A,USD,false,1,0,1000000,79679.99,,bank,Lisa,Miller,23304 Gutierrez Shoal,Lake Cindyshire,IA,US,20986,Female,1983-11-06,459-48-0715,21.195817,84.824195
+496,C_496,I,A,USD,false,1,0,1000000,87631.31,,bank,Jason,Gonzalez,37848 Sellers Brook,Cabrerafurt,OH,US,39045,Male,1943-10-26,788-77-1294,28.609716,-8.868033
+497,C_497,I,A,USD,false,1,0,1000000,85436.32,,bank,Robert,Diaz,01204 Brandon Fork,Port Stephen,FM,US,08087,Male,1998-12-08,475-32-8423,9.952100,13.723136
+498,C_498,I,A,USD,false,1,0,1000000,72914.20,,bank,Megan,Stout,39170 Jordan Courts Suite 586,Ashleyville,RI,US,74014,Female,1913-12-02,092-87-3623,165.414467,43.6025205
+499,C_499,I,A,USD,true,1,0,1000000,89368.97,,bank,David,Sanchez,45051 Michael Expressway,West Susan,ME,US,04689,Male,2025-02-13,687-79-8168,-119.507523,60.359424
+500,C_500,I,A,USD,false,1,0,1000000,71055.28,,bank,Michelle,Vargas,9930 Fischer Isle Suite 727,East Matthewhaven,MA,US,49373,Female,1959-02-10,347-90-8930,109.313790,-71.906111
+501,C_501,I,A,USD,false,1,0,1000000,87040.32,,bank,Kimberly,Pope,53724 Duane Islands Apt. 480,South Charleston,MI,US,84184,Female,2002-11-22,807-53-8855,102.266846,-18.325079
+502,C_502,I,A,USD,false,1,0,1000000,95718.03,,bank,Susan,Wilkins,180 Matthew Landing,Lake Alicia,WA,US,85418,Female,1962-04-10,583-59-9827,-5.548918,-73.9168285
+503,C_503,I,A,USD,false,1,0,1000000,76488.92,,bank,Jacob,Gilmore,83396 James Rest Suite 025,Rubioville,OR,US,55478,Male,1979-05-26,102-46-0517,64.969184,9.1112455
+504,C_504,I,A,USD,false,1,0,1000000,57404.23,,bank,Danielle,Vargas,1618 Becky Extensions,Lake Jacquelineborough,HI,US,83432,Female,1945-01-07,314-93-0053,64.672715,-73.463351
+505,C_505,I,A,USD,false,1,0,1000000,95297.08,,bank,Joshua,Reed,12859 Gallegos Estate Apt. 554,Port Kelly,GA,US,89283,Male,2025-12-08,764-21-3729,167.595483,41.549035

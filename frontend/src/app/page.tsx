@@ -13,8 +13,7 @@ interface FileEntry {
 const EXPECTED_FILES: Record<string, string> = {
   transactions: "transactions.csv (required)",
   accounts: "accounts.csv (required)",
-  alert_accounts: "alert_accounts.csv",
-  sar_accounts: "sar_accounts.csv",
+  alert_accounts: "alert_accounts.csv (optional, for validation)",
 };
 
 const schemaContent = `Table,Column Name,Display Name,Required,Description
@@ -25,29 +24,7 @@ transactions.csv,tx_type,Transaction type,Yes,"Type of transaction: TRANSFER, PA
 transactions.csv,base_amt,Amount,Yes,The transaction amount in USD.
 transactions.csv,tran_timestamp,Timestamp,Yes,"Date and time the transaction occurred, in ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)."
 accounts.csv,acct_id,Account ID,Yes,Unique numeric identifier for each account. Primary key used to link to transactions.
-accounts.csv,dsply_nm,Display name,No,"Account display label, formatted as C_[id]. Used as a human-readable account reference."
-accounts.csv,type,Account type,No,"Type of account holder. 'I' = Individual, 'C' = Corporate."
-accounts.csv,acct_stat,Account status,No,"Whether the account is active or closed. 'A' = Active, 'C' = Closed."
-accounts.csv,acct_rptng_crncy,Reporting currency,No,Currency used for account reporting. All accounts use USD in this dataset.
-accounts.csv,prior_sar_count,Prior SAR flag,No,"Whether the account has a prior Suspicious Activity Report. ""true"" = previously flagged, ""false"" = clean history."
-accounts.csv,branch_id,Branch ID,No,The bank branch this account belongs to. Numeric identifier.
-accounts.csv,open_dt,Open date,No,The simulation step when the account was opened. 0 = opened at start of simulation.
-accounts.csv,close_dt,Close date,No,The simulation step when the account closes. High value = account stays open throughout.
-accounts.csv,initial_deposit,Initial deposit,No,"Starting balance of the account in USD. Ranges from $50,000 to $100,000 in this dataset."
-accounts.csv,tx_behavior_id,Transaction behavior,No,The normal transaction model assigned to this account. Blank = no model assigned.
-accounts.csv,bank_id,Bank ID,No,"Which bank this account belongs to. All accounts use ""bank"" in this dataset."
-accounts.csv,first_name,First name,No,Client's first name.
-accounts.csv,last_name,Last name,No,Client's last name.
-accounts.csv,street_addr,Street address,No,Street address of the account holder.
-accounts.csv,city,City,No,City of residence.
-accounts.csv,state,State,No,US state of residence.
-accounts.csv,country,Country,No,Country of residence. All accounts are US in this dataset.
-accounts.csv,zip,Zip code,No,Postal code.
-accounts.csv,gender,Gender,No,Gender of the account holder.
-accounts.csv,birth_date,Date of birth,No,Date of birth of the account holder.
-accounts.csv,ssn,Social Security Number,No,SSN (simulated for realism only).
-accounts.csv,lon,Longitude,No,Geographic longitude coordinate of the account holder.
-accounts.csv,lat,Latitude,No,Geographic latitude coordinate of the account holder.`;
+alert_accounts.csv,acct_id,Account ID,Yes,List of known-suspicious account IDs. Optional file for validation; when provided, enables Precision @ top 3% and true/false positive labels.`;
 
 export default function UploadPage() {
   const router = useRouter();
@@ -77,7 +54,6 @@ export default function UploadPage() {
     const name = file.name.toLowerCase();
     if (name.includes("transaction")) return "transactions";
     if (name.includes("alert_account") || name.includes("alert-account")) return "alert_accounts";
-    if (name.includes("sar_account") || name.includes("sar-account")) return "sar_accounts";
     if (name.includes("account")) return "accounts";
     return null;
   }
@@ -177,12 +153,12 @@ export default function UploadPage() {
 
           {/* LEFT: SCHEMA DOCUMENTATION */}
           <div className="split-left">
-            <h2 style={{ fontSize: "28px", marginBottom: "16px" }}>Data Requirements</h2>
-            <p style={{ color: "var(--text-secondary)", marginBottom: "32px", lineHeight: "1.6" }}>
-              Please provide your data matching the schema below. Both transaction logs and account master records are required to build the network graph and begin analysis.
+            <h2 style={{ fontSize: "28px", marginBottom: "8px" }}>Data Requirements</h2>
+            <p style={{ color: "var(--text-secondary)", marginBottom: "12px", lineHeight: "1.6" }}>
+              Provide data matching the schema below. Transactions and accounts are required. Include flagged accounts for optional validation metrics.
             </p>
 
-            <div style={{ display: 'flex', gap: '12px', marginBottom: '32px' }}>
+            <div style={{ display: 'flex', gap: '12px', marginBottom: '24px' }}>
               <button
                 className="btn btn-secondary"
                 onClick={handleCopySchema}
@@ -246,7 +222,7 @@ export default function UploadPage() {
               </div>
             </div>
 
-            {/* Accounts Schema Card */}
+            {/* Accounts Schema Card - required fields only */}
             <div className="schema-card">
               <div className="schema-card-header">
                 <span className="schema-badge">Required</span>
@@ -259,120 +235,22 @@ export default function UploadPage() {
                 <span className="schema-field-req">*</span>
                 <p className="schema-field-desc">Unique numeric identifier for each account. Primary key used to link to transactions.</p>
               </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Display name</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>dsply_nm</span>
-                <p className="schema-field-desc">Account display label, formatted as C_[id]. Used as a human-readable account reference.</p>
+            </div>
+
+            {/* Alert accounts - optional validation */}
+            <div className="schema-card">
+              <div className="schema-card-header">
+                <span className="schema-badge" style={{ backgroundColor: "var(--accent-amber)", color: "var(--bg-primary)" }}>Optional</span>
+                <h3 className="schema-card-title">alert_accounts.csv</h3>
               </div>
+              <p className="schema-field-desc" style={{ marginBottom: "16px" }}>
+                For optional validation: provide a list of known-suspicious account IDs. When this file is uploaded, the dashboard shows Precision @ top 3% and labels flagged accounts as true or false positives. Omit this file if you do not have ground-truth labels.
+              </p>
               <div className="schema-field">
-                <span className="schema-field-name">Account type</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>type</span>
-                <p className="schema-field-desc">Type of account holder. &apos;I&apos; = Individual, &apos;C&apos; = Corporate.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Account status</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>acct_stat</span>
-                <p className="schema-field-desc">Whether the account is active or closed. &apos;A&apos; = Active, &apos;C&apos; = Closed.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Reporting currency</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>acct_rptng_crncy</span>
-                <p className="schema-field-desc">Currency used for account reporting. All accounts use USD in this dataset.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Prior SAR flag</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>prior_sar_count</span>
-                <p className="schema-field-desc">Whether the account has a prior Suspicious Activity Report. &quot;true&quot; = previously flagged, &quot;false&quot; = clean history.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Branch ID</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>branch_id</span>
-                <p className="schema-field-desc">The bank branch this account belongs to. Numeric identifier.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Open date</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>open_dt</span>
-                <p className="schema-field-desc">The simulation step when the account was opened. 0 = opened at start of simulation.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Close date</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>close_dt</span>
-                <p className="schema-field-desc">The simulation step when the account closes. High value = account stays open throughout.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Initial deposit</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>initial_deposit</span>
-                <p className="schema-field-desc">Starting balance of the account in USD. Ranges from $50,000 to $100,000 in this dataset.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Transaction behavior</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>tx_behavior_id</span>
-                <p className="schema-field-desc">The normal transaction model assigned to this account. Blank = no model assigned.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Bank ID</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>bank_id</span>
-                <p className="schema-field-desc">Which bank this account belongs to. All accounts use &quot;bank&quot; in this dataset.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">First name</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>first_name</span>
-                <p className="schema-field-desc">Client&apos;s first name.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Last name</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>last_name</span>
-                <p className="schema-field-desc">Client&apos;s last name.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Street address</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>street_addr</span>
-                <p className="schema-field-desc">Street address of the account holder.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">City</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>city</span>
-                <p className="schema-field-desc">City of residence.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">State</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>state</span>
-                <p className="schema-field-desc">US state of residence.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Country</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>country</span>
-                <p className="schema-field-desc">Country of residence. All accounts are US in this dataset.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Zip code</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>zip</span>
-                <p className="schema-field-desc">Postal code.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Gender</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>gender</span>
-                <p className="schema-field-desc">Gender of the account holder.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Date of birth</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>birth_date</span>
-                <p className="schema-field-desc">Date of birth of the account holder.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Social Security Number</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>ssn</span>
-                <p className="schema-field-desc">SSN (simulated for realism only).</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Longitude</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>lon</span>
-                <p className="schema-field-desc">Geographic longitude coordinate of the account holder.</p>
-              </div>
-              <div className="schema-field">
-                <span className="schema-field-name">Latitude</span>
-                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>lat</span>
-                <p className="schema-field-desc">Geographic latitude coordinate of the account holder.</p>
+                <span className="schema-field-name">Account ID</span>
+                <span className="schema-badge" style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--text-secondary)", marginLeft: "8px" }}>acct_id</span>
+                <span className="schema-field-req">*</span>
+                <p className="schema-field-desc">Numeric account ID. Each row is one account that is considered a true positive (known suspicious) for validation.</p>
               </div>
             </div>
           </div>
@@ -394,7 +272,7 @@ export default function UploadPage() {
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
                 </div>
                 <h3>Drop CSV files here</h3>
-                <p>or click to browse — transactions.csv &amp; accounts.csv required</p>
+                <p>or click to browse — transactions.csv and accounts.csv required</p>
                 <input
                   ref={inputRef}
                   type="file"

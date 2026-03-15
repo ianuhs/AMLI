@@ -26,10 +26,9 @@ def load_csv_files(run_dir: str) -> dict:
     dfs["accounts"] = pd.read_csv(acct_path)
     logger.info("Loaded %d accounts", len(dfs["accounts"]))
 
-    # Optional files
+    # Optional: alert_accounts.csv only used by offline training (build_labels), not by pipeline
     optional = {
         "alert_accounts": "alert_accounts.csv",
-        "sar_accounts": "sar_accounts.csv",
     }
 
     for key, fname in optional.items():
@@ -46,13 +45,14 @@ def load_csv_files(run_dir: str) -> dict:
 def normalize_columns(dfs: dict) -> dict:
     """
     Normalize column names across different data sources.
-    AMLSim output varies slightly; standardize to lowercase with underscores.
+    Transaction-specific renames (e.g. type -> tx_type) apply only to transactions
+    so that accounts keep "type" for entity type (I/O -> Individual/Organization).
     """
     for key, df in dfs.items():
         # Lowercase all columns
         df.columns = [str(c).lower().strip() for c in df.columns]
 
-        # Specific renames to ensure consistent keys
+        # Renames that apply to all dataframes
         col_map = {}
         for col in df.columns:
             if col in ("tran_id", "id", "transaction_id"):
@@ -63,12 +63,13 @@ def normalize_columns(dfs: dict) -> dict:
                 col_map[col] = "bene_acct"
             elif col in ("base_amt", "amount", "tx_amount"):
                 col_map[col] = "amount"
-            elif col in ("tx_type", "type", "tran_type"):
-                col_map[col] = "tx_type"
             elif col in ("tran_timestamp", "timestamp", "step"):
                 col_map[col] = "timestamp"
             elif col == "account_id":
                 col_map[col] = "acct_id"
+            # type -> tx_type only for transactions; accounts keep "type" for entity (I/O)
+            elif key == "transactions" and col in ("tx_type", "type", "tran_type"):
+                col_map[col] = "tx_type"
 
         if col_map:
             dfs[key] = df.rename(columns=col_map)

@@ -15,43 +15,49 @@ EXCLUDE_COLS = {"acct_id", "community_id"}
 
 def build_labels(features_df: pd.DataFrame, dfs: dict) -> pd.Series:
     """
-    Create binary labels: 1 if account appears in alert_accounts OR sar_accounts.
-    SAR accounts are higher-confidence suspicious activity reports.
+    Create binary labels for offline training: 1 if account appears in alert_accounts.
+    Only used by scripts.train; pipeline does not use this.
     """
-    suspicious_ids = set()
-
-    if "alert_accounts" in dfs and len(dfs["alert_accounts"]) > 0:
-        suspicious_ids.update(dfs["alert_accounts"]["acct_id"].unique())
-        logger.info("alert_accounts: %d flagged IDs", len(suspicious_ids))
-
-    if "sar_accounts" in dfs and len(dfs["sar_accounts"]) > 0:
-        sar_ids = set(dfs["sar_accounts"]["acct_id"].unique())
-        new_sar = sar_ids - suspicious_ids
-        suspicious_ids.update(sar_ids)
-        logger.info("sar_accounts: %d additional IDs (total unique: %d)", len(new_sar), len(suspicious_ids))
-
-    if suspicious_ids:
-        labels = features_df["acct_id"].isin(suspicious_ids).astype(int)
-        logger.info(
-            "Labels: %d suspicious / %d total (%.2f%%)",
-            labels.sum(), len(labels), 100 * labels.sum() / len(labels),
-        )
-        return labels
-    else:
-        logger.warning("No alert_accounts or sar_accounts found. Using all-zero labels.")
+    if "alert_accounts" not in dfs or len(dfs["alert_accounts"]) == 0:
+        logger.warning("No alert_accounts found. Using all-zero labels.")
         return pd.Series(np.zeros(len(features_df)), dtype=int)
 
-
-def get_alert_type_map(dfs: dict) -> dict:
-    """Get mapping of acct_id → alert_type from alert_accounts."""
-    if "alert_accounts" not in dfs:
-        return {}
-
-    alert = dfs["alert_accounts"]
-    # Take the first alert type per account
-    return dict(
-        alert.groupby("acct_id")["alert_type"].first().items()
+    suspicious_ids = set(dfs["alert_accounts"]["acct_id"].unique())
+    labels = features_df["acct_id"].isin(suspicious_ids).astype(int)
+    logger.info(
+        "Labels: %d suspicious / %d total (%.2f%%)",
+        labels.sum(), len(labels), 100 * labels.sum() / len(labels),
     )
+    return labels
+
+
+def infer_alert_type(row) -> str:
+    """
+    Infer alert pattern from model features (in/out degree and sent/received).
+    Used for display only; no ground-truth files required.
+    """
+    in_d = int(row.get("in_degree", 0) or 0)
+    out_d = int(row.get("out_degree", 0) or 0)
+    sent = float(row.get("total_sent", 0) or 0)
+    recv = float(row.get("total_received", 0) or 0)
+
+    # Require minimum activity to classify
+    if in_d + out_d < 2:
+        return "other"
+
+    # Receiving-dominated → fan_in
+    if in_d >= 1.5 * out_d and recv >= sent:
+        return "fan_in"
+    # Sending-dominated → fan_out
+    if out_d >= 1.5 * in_d and sent >= recv:
+        return "fan_out"
+    # Balanced in/out with meaningful activity → cycle/layering
+    if in_d >= 1 and out_d >= 1:
+        ratio = out_d / in_d
+        if 0.5 <= ratio <= 2:
+            return "cycle"
+
+    return "other"
 
 
 def train_model(features_df: pd.DataFrame, labels: pd.Series) -> tuple:

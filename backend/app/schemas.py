@@ -26,6 +26,7 @@ class CustomerOut(BaseModel):
     risk_score: float
     is_flagged: bool
     alert_type: Optional[str] = None
+    ground_truth_flagged: Optional[bool] = None  # True/False when alert_accounts uploaded for validation
     top_features: Optional[List[Dict[str, Any]]] = None
     llm_summary: Optional[str] = None
     total_sent: Optional[float] = None
@@ -42,7 +43,8 @@ class CustomerOut(BaseModel):
 class RunDetailOut(RunOut):
     customers: List[CustomerOut] = []
     risk_distribution: Optional[List[Dict[str, Any]]] = None
-    graph_data: Optional[Dict[str, Any]] = None
+    portfolio_risk: Optional[Dict[str, Any]] = None  # total_volume, flagged_volume, flagged_pct, transaction_count
+    precision_at_top_003: Optional[float] = None  # precision among risk_score >= 0.97 (when ground truth available)
 
 
 class UploadResponse(BaseModel):

@@ -18,10 +18,9 @@ async def upload_files(
     transactions: UploadFile = File(...),
     accounts: UploadFile = File(...),
     alert_accounts: UploadFile = File(None),
-    sar_accounts: UploadFile = File(None),
     db: Session = Depends(get_db),
 ):
-    """Upload CSV files and start the AML detection pipeline."""
+    """Upload CSV files and start the AML detection pipeline. Optional alert_accounts.csv for validation (true/false positive)."""
     # Create run record
     run = Run(filename=transactions.filename, status="pending")
     db.add(run)
@@ -36,11 +35,8 @@ async def upload_files(
         "transactions.csv": transactions,
         "accounts.csv": accounts,
     }
-    # Optional files
     if alert_accounts:
         file_map["alert_accounts.csv"] = alert_accounts
-    if sar_accounts:
-        file_map["sar_accounts.csv"] = sar_accounts
 
     for fname, upload in file_map.items():
         path = os.path.join(run_dir, fname)

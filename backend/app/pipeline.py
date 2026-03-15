@@ -8,7 +8,7 @@ from app.models import Run, Customer, Report
 from app.services.ingestion import load_csv_files, normalize_columns
 from app.services.features import compute_tabular_features
 from app.services.graph import compute_graph_features
-from app.services.model import load_pretrained_model, predict_risk_scores, get_alert_type_map
+from app.services.model import load_pretrained_model, predict_risk_scores, infer_alert_type
 from app.services.explainer import compute_shap_values
 from app.services.llm import generate_llm_summary
 from app.services.pdf import generate_pdf_report
@@ -64,8 +64,7 @@ def run_pipeline(run_id: int, run_dir: str):
         flagged_mask = features_df["risk_score"] >= settings.risk_threshold
         shap_explanations = compute_shap_values(model, features_df, feature_cols, flagged_mask=flagged_mask)
 
-        # Step 7: Identify flagged accounts
-        alert_type_map = get_alert_type_map(dfs)
+        # Step 7: Identify flagged accounts (alert_type inferred from features)
         flagged_count = int(flagged_mask.sum())
         total_accounts = len(features_df)
         logger.info("Flagged %d / %d accounts (threshold=%.2f)", flagged_count, total_accounts, settings.risk_threshold)
@@ -78,6 +77,12 @@ def run_pipeline(run_id: int, run_dir: str):
         if "type" in accounts_df.columns:
             account_types = dict(zip(accounts_df["acct_id"], accounts_df["type"].map({"I": "Individual", "O": "Organization"})))
 
+        # Ground truth for validation: which accounts were in alert_accounts (if uploaded)
+        alert_acct_ids = set()
+        if "alert_accounts" in dfs and len(dfs["alert_accounts"]) > 0:
+            alert_acct_ids = set(dfs["alert_accounts"]["acct_id"].astype(int).tolist())
+            logger.info("Validation: %d accounts in alert_accounts (ground truth)", len(alert_acct_ids))
+
         # Save customers to DB
         logger.info("=== Saving results to database ===")
         customer_records = []
@@ -87,12 +92,13 @@ def run_pipeline(run_id: int, run_dir: str):
             acct_id = row["acct_id"]
             score = row["risk_score"]
             is_flagged = bool(score >= settings.risk_threshold)
-            alert_type = alert_type_map.get(acct_id)
+            alert_type = infer_alert_type(row)
             top_features = shap_explanations.get(acct_id, [])
+            ground_truth = (int(acct_id) in alert_acct_ids) if alert_acct_ids else None
 
-            # Generate LLM summary only for flagged accounts (up to max)
+            # Generate LLM summary for every flagged account
             llm_summary = None
-            if is_flagged and len(flagged_data_for_pdf) < settings.max_llm_accounts:
+            if is_flagged:
                 llm_summary = generate_llm_summary(acct_id, score, top_features, alert_type)
 
             cust = Customer(
@@ -103,6 +109,7 @@ def run_pipeline(run_id: int, run_dir: str):
                 risk_score=float(score),
                 is_flagged=is_flagged,
                 alert_type=alert_type,
+                ground_truth_flagged=ground_truth,
                 shap_values={f["name"]: f["contribution"] for f in top_features} if top_features else None,
                 top_features=top_features,
                 llm_summary=llm_summary,

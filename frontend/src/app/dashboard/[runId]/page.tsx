@@ -2,11 +2,19 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useParams } from "next/navigation";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { getRun, getReportUrl, RunData, CustomerData } from "@/lib/api";
 import RiskDistribution from "@/components/RiskDistribution";
-import FlaggedTable from "@/components/FlaggedTable";
+import FlaggedTable, { hasGroundTruth } from "@/components/FlaggedTable";
 import ShapWaterfall from "@/components/ShapWaterfall";
-import NetworkGraph from "@/components/NetworkGraph";
+import { getRiskFactorInfo, RISK_FACTOR_GLOSSARY } from "@/lib/riskFactors";
+
+function formatVolume(value: number): string {
+  if (value >= 1e9) return `$${(value / 1e9).toFixed(1)}B`;
+  if (value >= 1e6) return `$${(value / 1e6).toFixed(1)}M`;
+  if (value >= 1e3) return `$${(value / 1e3).toFixed(1)}K`;
+  return `$${value.toFixed(0)}`;
+}
 
 export default function DashboardPage() {
   const params = useParams();
@@ -14,6 +22,7 @@ export default function DashboardPage() {
 
   const [data, setData] = useState<RunData | null>(null);
   const [selectedCustomer, setSelectedCustomer] = useState<CustomerData | null>(null);
+  const [showValidation, setShowValidation] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const fetchData = useCallback(async () => {
@@ -87,7 +96,7 @@ export default function DashboardPage() {
       <div className="dashboard-stats">
         <div className="stat-card">
           <div className="stat-label">Total Accounts</div>
-          <div className="stat-value info">
+          <div className="stat-value" style={{ color: "#ffffff" }}>
             {data.total_accounts?.toLocaleString()}
           </div>
         </div>
@@ -97,12 +106,21 @@ export default function DashboardPage() {
             {data.flagged_count}
           </div>
         </div>
-        <div className="stat-card">
-          <div className="stat-label">Model AUC</div>
-          <div className="stat-value success">
-            {data.model_auc?.toFixed(4)}
+        {data.precision_at_top_003 != null ? (
+          <div className="stat-card">
+            <div className="stat-label">Precision @ top 3%</div>
+            <div className="stat-value success">
+              {(data.precision_at_top_003 * 100).toFixed(1)}%
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="stat-card">
+            <div className="stat-label">Model AUC</div>
+            <div className="stat-value success">
+              {data.model_auc?.toFixed(4)}
+            </div>
+          </div>
+        )}
         <div className="stat-card">
           <div className="stat-label">Report</div>
           <a
@@ -124,20 +142,117 @@ export default function DashboardPage() {
           )}
         </div>
 
-        <div className="card">
-          <div className="card-title">Flagged Account Network</div>
-          {data.graph_data && <NetworkGraph data={data.graph_data} />}
+        <div className="card portfolio-risk-card">
+          <div className="card-title">Portfolio Risk</div>
+          {data.portfolio_risk != null && (data.portfolio_risk.transaction_count != null || (data.portfolio_risk.total_volume ?? 0) > 0) ? (
+            <div className="portfolio-risk">
+              {(data.portfolio_risk.total_volume ?? 0) > 0 && (
+                <div className="portfolio-risk-chart">
+                  <ResponsiveContainer width="100%" height={220}>
+                    <PieChart>
+                      <Pie
+                        data={[
+                          { name: "Rest", value: (data.portfolio_risk.total_volume ?? 0) - (data.portfolio_risk.flagged_volume ?? 0) },
+                          { name: "Flagged", value: data.portfolio_risk.flagged_volume ?? 0 },
+                        ]}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={58}
+                        outerRadius={85}
+                        paddingAngle={2}
+                        dataKey="value"
+                        stroke="none"
+                        label={({ cx, cy, index }) =>
+                          index === 0 && data.portfolio_risk ? (
+                            <text x={cx} y={cy} textAnchor="middle" dominantBaseline="middle" fill="var(--text-primary)" fontSize={20} fontWeight={600}>
+                              <tspan x={cx} dy="-0.2em">{(data.portfolio_risk.flagged_pct ?? 0).toFixed(1)}%</tspan>
+                              <tspan x={cx} dy="1.2em" fontSize={11} fill="var(--text-muted)">flagged</tspan>
+                            </text>
+                          ) : null
+                        }
+                        labelLine={false}
+                      >
+                        <Cell fill="var(--accent-emerald)" />
+                        <Cell fill="var(--accent-rose)" />
+                      </Pie>
+                      <Tooltip
+                        formatter={(value: unknown) => formatVolume(Number(value ?? 0))}
+                        contentStyle={{
+                          background: "var(--bg-secondary)",
+                          border: "1px solid var(--border-subtle)",
+                          borderRadius: 8,
+                          color: "var(--text-primary)",
+                          fontSize: 12,
+                        }}
+                      />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+              )}
+              <div className="portfolio-risk-legend">
+                <div className="portfolio-risk-row">
+                  <span className="portfolio-risk-label">Transactions</span>
+                  <span className="portfolio-risk-value">
+                    {data.portfolio_risk.transaction_count != null ? data.portfolio_risk.transaction_count.toLocaleString() : "—"}
+                  </span>
+                </div>
+                <div className="portfolio-risk-row">
+                  <span className="portfolio-risk-label">Accounts</span>
+                  <span className="portfolio-risk-value">{data.total_accounts?.toLocaleString() ?? "—"}</span>
+                </div>
+                {(data.portfolio_risk.total_volume ?? 0) > 0 && (
+                  <>
+                    <div className="portfolio-risk-row">
+                      <span className="portfolio-risk-label">Total volume</span>
+                      <span className="portfolio-risk-value">{formatVolume(data.portfolio_risk.total_volume ?? 0)}</span>
+                    </div>
+                    <div className="portfolio-risk-row">
+                      <span className="portfolio-risk-label">Flagged volume</span>
+                      <span className="portfolio-risk-value danger">{formatVolume(data.portfolio_risk.flagged_volume ?? 0)}</span>
+                    </div>
+                    <div className="portfolio-risk-row">
+                      <span className="portfolio-risk-label">Flagged %</span>
+                      <span className="portfolio-risk-value danger">{(data.portfolio_risk.flagged_pct ?? 0).toFixed(1)}%</span>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className="portfolio-risk portfolio-risk-fallback">
+              <div className="portfolio-risk-legend">
+                <div className="portfolio-risk-row">
+                  <span className="portfolio-risk-label">Accounts</span>
+                  <span className="portfolio-risk-value">{data.total_accounts?.toLocaleString() ?? "—"}</span>
+                </div>
+              </div>
+              <p style={{ fontSize: 14, color: "var(--text-muted)", marginTop: 12 }}>No transaction volume data for this run. Upload runs with transactions and accounts to see portfolio risk and the donut chart.</p>
+            </div>
+          )}
         </div>
       </div>
 
       <div className="dashboard-full">
         <div className="card">
-          <div className="card-title">
-            Flagged Accounts ({data.customers.length})
+          <div className="card-title-row">
+            <div className="card-title" style={{ marginBottom: 0 }}>
+              Flagged Accounts ({data.customers.length})
+            </div>
+            {hasGroundTruth(data.customers) && (
+              <label className="validation-toggle">
+                <input
+                  type="checkbox"
+                  checked={showValidation}
+                  onChange={(e) => setShowValidation(e.target.checked)}
+                />
+                Show validation
+              </label>
+            )}
           </div>
           <FlaggedTable
             customers={data.customers}
             onSelect={setSelectedCustomer}
+            showValidation={showValidation}
           />
         </div>
       </div>
@@ -196,12 +311,44 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            {selectedCustomer.top_features && selectedCustomer.top_features.length > 0 && (
-              <div className="detail-section">
-                <div className="detail-section-title">Risk Factor Breakdown (SHAP)</div>
-                <ShapWaterfall features={selectedCustomer.top_features} />
-              </div>
-            )}
+            {selectedCustomer.top_features && selectedCustomer.top_features.length > 0 && (() => {
+              const chartFeatures = [...selectedCustomer.top_features]
+                .sort((a, b) => Math.abs(b.contribution) - Math.abs(a.contribution))
+                .slice(0, 8);
+              const chartNames = Array.from(new Set(chartFeatures.map((f) => f.name)));
+              return (
+                <div className="detail-section">
+                  <div className="detail-section-title">Risk Factor Breakdown (SHAP)</div>
+                  <ShapWaterfall features={selectedCustomer.top_features} />
+                  <div className="risk-factor-info-box">
+                    <div className="risk-factor-info-title">What these risk factors mean</div>
+                    <p className="risk-factor-info-intro">
+                      These metrics describe how the account moves money and how it sits in the transaction network. They explain why the model assigned a higher risk score.
+                    </p>
+                    <ul className="risk-factor-glossary-list">
+                      {chartNames.map((name) => {
+                        const info = getRiskFactorInfo(name);
+                        return (
+                          <li key={name}>
+                            <strong>{info.label}</strong> — {info.description}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                    <details className="risk-factor-all-definitions">
+                      <summary>View full glossary of risk factors</summary>
+                      <ul className="risk-factor-glossary-list">
+                        {Object.entries(RISK_FACTOR_GLOSSARY).map(([key, { label, description }]) => (
+                          <li key={key}>
+                            <strong>{label}</strong> — {description}
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  </div>
+                </div>
+              );
+            })()}
 
             {selectedCustomer.llm_summary && (
               <div className="detail-section">

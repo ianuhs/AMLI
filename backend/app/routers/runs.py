@@ -1,8 +1,11 @@
+import os
 import numpy as np
+import pandas as pd
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
 
+from app.config import settings
 from app.database import get_db
 from app.models import Run, Customer
 from app.schemas import RunOut, RunDetailOut, CustomerOut
@@ -39,13 +42,17 @@ def get_run(run_id: int, db: Session = Depends(get_db)):
     )
     risk_distribution = _build_histogram([s[0] for s in all_scores])
 
-    # Build graph data for network visualization (flagged accounts only)
-    graph_data = _build_graph_data(customers)
+    # Portfolio risk: total volume, volume through flagged accounts, %
+    portfolio_risk = _build_portfolio_risk(customers, run_id)
+
+    # Precision@top 3%: among accounts with risk_score >= 0.97, fraction that are ground-truth positives
+    precision_at_top_003 = _precision_at_top_risk(db, run_id, threshold=0.97)
 
     result = RunDetailOut.model_validate(run)
     result.customers = [CustomerOut.model_validate(c) for c in customers]
     result.risk_distribution = risk_distribution
-    result.graph_data = graph_data
+    result.portfolio_risk = portfolio_risk
+    result.precision_at_top_003 = precision_at_top_003
 
     return result
 
@@ -66,35 +73,53 @@ def _build_histogram(scores: list, bins: int = 20) -> list:
     ]
 
 
-def _build_graph_data(customers: list) -> dict:
-    """Build nodes + edges for network visualization from flagged customers."""
-    nodes = []
-    edges = []
+def _precision_at_top_risk(db: Session, run_id: int, threshold: float = 0.97) -> float | None:
+    """Precision among accounts with risk_score >= threshold (ground truth from alert_accounts)."""
+    top = (
+        db.query(Customer)
+        .filter(Customer.run_id == run_id, Customer.risk_score >= threshold)
+        .all()
+    )
+    if not top:
+        return None
+    with_ground_truth = [c for c in top if c.ground_truth_flagged is not None]
+    if not with_ground_truth:
+        return None
+    tp = sum(1 for c in with_ground_truth if c.ground_truth_flagged is True)
+    return round(tp / len(with_ground_truth), 4)
 
-    for c in customers:
-        nodes.append({
-            "id": str(c.acct_id),
-            "label": c.display_name or f"Acct {c.acct_id}",
-            "risk_score": c.risk_score,
-            "alert_type": c.alert_type,
-            "in_degree": c.in_degree or 0,
-            "out_degree": c.out_degree or 0,
-        })
 
-    # Group by alert_type to create edges within alert groups
-    from collections import defaultdict
-    groups = defaultdict(list)
-    for c in customers:
-        if c.alert_type:
-            groups[c.alert_type].append(str(c.acct_id))
-
-    for alert_type, acct_ids in groups.items():
-        for i in range(len(acct_ids)):
-            for j in range(i + 1, len(acct_ids)):
-                edges.append({
-                    "source": acct_ids[i],
-                    "target": acct_ids[j],
-                    "type": alert_type,
-                })
-
-    return {"nodes": nodes, "edges": edges}
+def _build_portfolio_risk(customers: list, run_id: int) -> dict:
+    """Compute total transaction volume, volume through flagged accounts, and % at risk."""
+    out = {
+        "total_volume": 0.0,
+        "flagged_volume": 0.0,
+        "flagged_pct": 0.0,
+        "transaction_count": 0,
+    }
+    run_dir = os.path.join(settings.upload_dir, str(run_id))
+    if not os.path.isdir(run_dir):
+        return out
+    try:
+        from app.services.ingestion import load_csv_files, normalize_columns
+        dfs = load_csv_files(run_dir)
+        dfs = normalize_columns(dfs)
+        tx = dfs["transactions"]
+        out["transaction_count"] = len(tx)
+        if "amount" not in tx.columns:
+            return out
+        amounts = pd.to_numeric(tx["amount"], errors="coerce").fillna(0)
+        total_volume = float(amounts.sum())
+        out["total_volume"] = total_volume
+        if total_volume <= 0:
+            return out
+        flagged_ids = {c.acct_id for c in customers}
+        if "orig_acct" in tx.columns and "bene_acct" in tx.columns:
+            orig_in = tx["orig_acct"].astype(int).isin(flagged_ids)
+            bene_in = tx["bene_acct"].astype(int).isin(flagged_ids)
+            through_flagged = amounts[orig_in | bene_in].sum()
+            out["flagged_volume"] = float(through_flagged)
+            out["flagged_pct"] = round(100.0 * through_flagged / total_volume, 2)
+    except Exception:
+        pass
+    return out
